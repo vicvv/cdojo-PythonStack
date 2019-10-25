@@ -1,0 +1,559 @@
+ubuntu@ip-172-31-8-121:~$ more mydeploy.txt 
+Script started on 2019-08-27 01:39:29+0000
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+
+ubuntu@ip-172-31-8-121:~$ sudo apt-get update;
+Hit:1 http://us-west-1.ec2.archive.ubuntu.com/ubuntu bionic InRelease
+Hit:2 http://us-west-1.ec2.archive.ubuntu.com/ubuntu bionic-updates InRelease
+Hit:3 http://us-west-1.ec2.archive.ubuntu.com/ubuntu bionic-backports InRelease
+Hit:4 http://security.ubuntu.com/ubuntu bionic-security InRelease               
+
+Reading package lists... 72% 
+Reading package lists... 89%
+Reading package lists... Done
+ubuntu@ip-172-31-8-121:~$ sudo apt-get install nginx;
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+  fontconfig-config fonts-dejavu-core libfontconfig1 libgd3 libjbig0 libjpeg-turbo8 libjpeg8 libnginx-mod-http-geoip libnginx-mod-http-image-filter
+  libnginx-mod-http-xslt-filter libnginx-mod-mail libnginx-mod-stream libtiff5 libwebp6 libxpm4 nginx-common nginx-core
+Suggested packages:
+  libgd-tools fcgiwrap nginx-doc ssl-cert
+The following NEW packages will be installed:
+  fontconfig-config fonts-dejavu-core libfontconfig1 libgd3 libjbig0 libjpeg-turbo8 libjpeg8 libnginx-mod-http-geoip libnginx-mod-http-image-filter
+  libnginx-mod-http-xslt-filter libnginx-mod-mail libnginx-mod-stream libtiff5 libwebp6 libxpm4 nginx nginx-common nginx-core
+0 upgraded, 18 newly installed, 0 to remove and 23 not upgraded.
+Need to get 2461 kB of archives.
+After this operation, 8210 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 http://us-west-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libjpeg-turbo8 amd64 1.5.2-0ubuntu5.18.04.1 [110 kB]
+Get:2 http://us-west-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 fonts-dejavu-core all 2.37-1 [1041 kB]
+Get:3 http://us-west-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 fontconfig-config all 2.12.6-0ubuntu2 [55.8 kB]
+Get:4 http://us-west-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 libfontconfig1 amd64 2.12.6-0ubuntu2 [137 kB]
+Get:5 http://us-west-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 libjpeg8 amd64 8c-2ubuntu8 [2194 B]
+Get:6 http://us-west-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 libjbig0 amd64 2.1-3.1build1 [26.7 kB]
+Get:7 http://us-west-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libtiff5 amd64 4.0.9-5ubuntu0.2 [153 kB]
+Get:8 http://us-west-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 libwebp6 amd64 0.6.1-2 [185 kB]
+Get:9 http://us-west-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 libxpm4 amd64 1:3.5.12-1 [34.0 kB]
+Get:10 http://us-west-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libgd3 amd64 2.2.5-4ubuntu0.3 [119 kB]
+Get:11 http://us-west-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 nginx-common all 1.14.0-0ubuntu1.6 [37.3 kB]
+Get:12 http://us-west-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libnginx-mod-http-geoip amd64 1.14.0-0ubuntu1.6 [11.2 kB]
+Get:13 http://us-west-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libnginx-mod-http-image-filter amd64 1.14.0-0ubuntu1.6 [14.5 kB]
+Get:14 http://us-west-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libnginx-mod-http-xslt-filter amd64 1.14.0-0ubuntu1.6 [12.9 kB]
+Get:15 http://us-west-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libnginx-mod-mail amd64 1.14.0-0ubuntu1.6 [41.7 kB]
+Get:16 http://us-west-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libnginx-mod-stream amd64 1.14.0-0ubuntu1.6 [63.6 kB]
+Get:17 http://us-west-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 nginx-core amd64 1.14.0-0ubuntu1.6 [413 kB]
+Get:18 http://us-west-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 nginx all 1.14.0-0ubuntu1.6 [3596 B]
+Fetched 2461 kB in 0s (15.2 MB/s)
+Preconfiguring packages ...
+Selecting previously unselected package libjpeg-turbo8:amd64.
+(Reading database ... 56638 files and directories currently installed.)
+Preparing to unpack .../00-libjpeg-turbo8_1.5.2-0ubuntu5.18.04.1_amd64.deb ...
+Unpacking libjpeg-turbo8:amd64 (1.5.2-0ubuntu5.18.04.1) ...
+Selecting previously unselected package fonts-dejavu-core.
+Preparing to unpack .../01-fonts-dejavu-core_2.37-1_all.deb ...
+Unpacking fonts-dejavu-core (2.37-1) ...
+Selecting previously unselected package fontconfig-config.
+Preparing to unpack .../02-fontconfig-config_2.12.6-0ubuntu2_all.deb ...
+Unpacking fontconfig-config (2.12.6-0ubuntu2) ...
+Selecting previously unselected package libfontconfig1:amd64.
+Preparing to unpack .../03-libfontconfig1_2.12.6-0ubuntu2_amd64.deb ...
+Unpacking libfontconfig1:amd64 (2.12.6-0ubuntu2) ...
+Selecting previously unselected package libjpeg8:amd64.
+Preparing to unpack .../04-libjpeg8_8c-2ubuntu8_amd64.deb ...
+Unpacking libjpeg8:amd64 (8c-2ubuntu8) ...
+Selecting previously unselected package libjbig0:amd64.
+Preparing to unpack .../05-libjbig0_2.1-3.1build1_amd64.deb ...
+Unpacking libjbig0:amd64 (2.1-3.1build1) ...
+Selecting previously unselected package libtiff5:amd64.
+Preparing to unpack .../06-libtiff5_4.0.9-5ubuntu0.2_amd64.deb ...
+Unpacking libtiff5:amd64 (4.0.9-5ubuntu0.2) ...
+Selecting previously unselected package libwebp6:amd64.
+Preparing to unpack .../07-libwebp6_0.6.1-2_amd64.deb ...
+Unpacking libwebp6:amd64 (0.6.1-2) ...
+Selecting previously unselected package libxpm4:amd64.
+Preparing to unpack .../08-libxpm4_1%3a3.5.12-1_amd64.deb ...
+Unpacking libxpm4:amd64 (1:3.5.12-1) ...
+Selecting previously unselected package libgd3:amd64.
+Preparing to unpack .../09-libgd3_2.2.5-4ubuntu0.3_amd64.deb ...
+Unpacking libgd3:amd64 (2.2.5-4ubuntu0.3) ...
+Selecting previously unselected package nginx-common.
+Preparing to unpack .../10-nginx-common_1.14.0-0ubuntu1.6_all.deb ...
+Unpacking nginx-common (1.14.0-0ubuntu1.6) ...
+Selecting previously unselected package libnginx-mod-http-geoip.
+Preparing to unpack .../11-libnginx-mod-http-geoip_1.14.0-0ubuntu1.6_amd64.deb ...
+Unpacking libnginx-mod-http-geoip (1.14.0-0ubuntu1.6) ...
+Selecting previously unselected package libnginx-mod-http-image-filter.
+Preparing to unpack .../12-libnginx-mod-http-image-filter_1.14.0-0ubuntu1.6_amd64.deb ...
+Unpacking libnginx-mod-http-image-filter (1.14.0-0ubuntu1.6) ...
+Selecting previously unselected package libnginx-mod-http-xslt-filter.
+Preparing to unpack .../13-libnginx-mod-http-xslt-filter_1.14.0-0ubuntu1.6_amd64.deb ...
+Unpacking libnginx-mod-http-xslt-filter (1.14.0-0ubuntu1.6) ...
+Selecting previously unselected package libnginx-mod-mail.
+Preparing to unpack .../14-libnginx-mod-mail_1.14.0-0ubuntu1.6_amd64.deb ...
+Unpacking libnginx-mod-mail (1.14.0-0ubuntu1.6) ...
+Selecting previously unselected package libnginx-mod-stream.
+Preparing to unpack .../15-libnginx-mod-stream_1.14.0-0ubuntu1.6_amd64.deb ...
+Unpacking libnginx-mod-stream (1.14.0-0ubuntu1.6) ...
+Selecting previously unselected package nginx-core.
+Preparing to unpack .../16-nginx-core_1.14.0-0ubuntu1.6_amd64.deb ...
+Unpacking nginx-core (1.14.0-0ubuntu1.6) ...
+Selecting previously unselected package nginx.
+Preparing to unpack .../17-nginx_1.14.0-0ubuntu1.6_all.deb ...
+Unpacking nginx (1.14.0-0ubuntu1.6) ...
+Processing triggers for ufw (0.36-0ubuntu0.18.04.1) ...
+Processing triggers for ureadahead (0.100.0-21) ...
+Setting up libjbig0:amd64 (2.1-3.1build1) ...
+Setting up fonts-dejavu-core (2.37-1) ...
+Setting up nginx-common (1.14.0-0ubuntu1.6) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/nginx.service → /lib/systemd/system/nginx.service.
+Setting up libjpeg-turbo8:amd64 (1.5.2-0ubuntu5.18.04.1) ...
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+Processing triggers for systemd (237-3ubuntu10.24) ...
+Setting up libnginx-mod-mail (1.14.0-0ubuntu1.6) ...
+Setting up libxpm4:amd64 (1:3.5.12-1) ...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+Setting up libnginx-mod-http-xslt-filter (1.14.0-0ubuntu1.6) ...
+Setting up libnginx-mod-http-geoip (1.14.0-0ubuntu1.6) ...
+Setting up libwebp6:amd64 (0.6.1-2) ...
+Setting up libjpeg8:amd64 (8c-2ubuntu8) ...
+Setting up fontconfig-config (2.12.6-0ubuntu2) ...
+Setting up libnginx-mod-stream (1.14.0-0ubuntu1.6) ...
+Setting up libtiff5:amd64 (4.0.9-5ubuntu0.2) ...
+Setting up libfontconfig1:amd64 (2.12.6-0ubuntu2) ...
+Setting up libgd3:amd64 (2.2.5-4ubuntu0.3) ...
+Setting up libnginx-mod-http-image-filter (1.14.0-0ubuntu1.6) ...
+Setting up nginx-core (1.14.0-0ubuntu1.6) ...
+Setting up nginx (1.14.0-0ubuntu1.6) ...
+Processing triggers for ureadahead (0.100.0-21) ...
+Processing triggers for ufw (0.36-0ubuntu0.18.04.1) ...
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+ubuntu@ip-172-31-8-121:~$ git clone https://github.com/vicvv/belt_app;
+Cloning into 'belt_app'...
+remote: Enumerating objects: 79, done.
+remote: Coun
+remote: Counting objects:  40% (32/79)
+remote: Counting objects:  60% (48/79)
+remote: Counting objects:  81% (64/79)
+remote: Counting objects: 100% (79/79), done.
+remote: Compressing objects:  30% (15/49)
+remote: Compressing objects:  61% (30/49)
+remote: Compressing objects:  91% (45/49)
+remote: Compressing objects: 100% (49/49), done.
+remote: Total 79 (delta 22), reused 75 (delta 18), pack-reused 0
+Unpacking objects:  24% (19/79)   
+Unpacking objects:  49% (39/79)   
+Unpacking objects:  73% (58/79)   
+Unpacking objects:  97% (77/79)   
+Unpacking objects: 100% (79/79), done.
+ubuntu@ip-172-31-8-121:~$ ls
+belt_app  mydeploy.txt
+ubuntu@ip-172-31-8-121:~$ sudo apt-get install python3-venv;
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+  python-pip-whl python3-distutils python3-lib2to3 python3.6-venv
+The following NEW packages will be installed:
+  python-pip-whl python3-distutils python3-lib2to3 python3-venv python3.6-venv
+0 upgraded, 5 newly installed, 0 to remove and 23 not upgraded.
+Need to get 1878 kB of archives.
+After this operation, 4017 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 http://us-west-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 python-pip-whl all 9.0.1-2.3~ubuntu1.18.04.1 [1653 kB]
+Get:2 http://us-west-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 python3-lib2to3 all 3.6.8-1~18.04 [76.5 kB]
+Get:3 http://us-west-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 python3-distutils all 3.6.8-1~18.04 [141 kB]
+Get:4 http://us-west-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 python3.6-venv amd64 3.6.8-1~18.04.1 [6184 B]
+Get:5 http://us-west-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 python3-venv amd64 3.6.7-1~18.04 [1208 B]
+Fetched 1878 kB in 0s (43.5 MB/s) 
+Selecting previously unselected package python-pip-whl.
+(Reading database ... 56874 files and directories currently installed.)
+Preparing to unpack .../python-pip-whl_9.0.1-2.3~ubuntu1.18.04.1_all.deb ...
+Unpacking python-pip-whl (9.0.1-2.3~ubuntu1.18.04.1) ...
+Selecting previously unselected package python3-lib2to3.
+Preparing to unpack .../python3-lib2to3_3.6.8-1~18.04_all.deb ...
+Unpacking python3-lib2to3 (3.6.8-1~18.04) ...
+Selecting previously unselected package python3-distutils.
+Preparing to unpack .../python3-distutils_3.6.8-1~18.04_all.deb ...
+Unpacking python3-distutils (3.6.8-1~18.04) ...
+Selecting previously unselected package python3.6-venv.
+Preparing to unpack .../python3.6-venv_3.6.8-1~18.04.1_amd64.deb ...
+Unpacking python3.6-venv (3.6.8-1~18.04.1) ...
+Selecting previously unselected package python3-venv.
+Preparing to unpack .../python3-venv_3.6.7-1~18.04_amd64.deb ...
+Unpacking python3-venv (3.6.7-1~18.04) ...
+Setting up python-pip-whl (9.0.1-2.3~ubuntu1.18.04.1) ...
+Setting up python3.6-venv (3.6.8-1~18.04.1) ...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+Setting up python3-lib2to3 (3.6.8-1~18.04) ...
+Setting up python3-distutils (3.6.8-1~18.04) ...
+Setting up python3-venv (3.6.7-1~18.04) ...
+ubuntu@ip-172-31-8-121:~$ cd belt_app;
+ubuntu@ip-172-31-8-121:~/belt_app$ ls
+BELT_EXAM  apps  manage.py  requirements.txt
+
+
+ubuntu@ip-172-31-8-121:~/belt_app$ python3 -m venv venv
+ubuntu@ip-172-31-8-121:~/belt_app$ source venv/bin/activate;
+
+
+(venv) ubuntu@ip-172-31-8-121:~/belt_app$ pip install django==1.10
+
+
+Collecting django==1.10
+  Downloading https://files.pythonhosted.org/packages/4b/4c/059f68d8f029f7054e4e6bb0b1ed2fde7f28d07a3727325727d5a95ae1b8/Django-1.10-py2.py3-none-any.whl (6.8MB)
+    1% |▌ 
+    2% |█          
+    4% |█▍        
+    5% |█▉ 
+  
+    8% |██▋                             | 552kB
+    9% |███         
+    10% |███▍                            | 727kB 32.0
+    12%
+    13% |████▎      
+    14% |████▋                 
+    15% |█████                           |
+    16% |█████▍                        
+    18% |█████▉                   
+    19% |██████▏         
+    20% |████?
+    
+    22% |███████▎                        | 1.5MB
+    23% |███████?
+    25% |████████                        | 1.7MB 28.6MB/s eta 0:00:01
+    26% |████████▍   
+    27% |████████▊                       | 1.9MB 29.3MB/s e
+    28% |██████?
+    29% |█████████▌                
+    30% |█████████▉                      | 2.1MB 29.7MB/s e
+    31% 
+    32% |████?
+    33% |██████████
+    34% |███████████▏   
+    36% |███████████▌ 
+    37% |███████████▉ 
+    38% |███████████?
+    39% |███████?
+    40% |███?
+
+    42% |█████████████▌                  
+    43% |██████████?
+    44% |
+    45% |██████████████▌            
+    46% |█████
+    47% |███████████████                 | 3.2MB 27.
+    48% |██████?
+    49% |███████████████▊                | 3
+    50% |███?
+    51% |████████████████▍ 
+    51% |████████████████▋               | 3.5MB 26.2MB/s et
+    53% |█████
+    53% |███████████████?
+    54% |█████████████████▌              | 
+    55% |█████████████████▉              | 3.8MB 28.2MB/s eta 0:
+    56% |█?
+    57% |██████?
+    58% |███████████?
+    59% |████████████████?
+    60% |███████████████████
+    61% |███████████████████?
+    62% |████████████████████ 
+    63% |████████████████████
+    64% |████████████████?
+    64% |█████████████?
+    65% |██████████?
+    66% |████?
+    67% |█████████████████████▋          | 4.6MB 26.0MB/s eta 0:00:01
+    68% |██████████████████████          | 4
+    69% |██████████████████
+    70% |██████?
+    70% |██████████████████████▊         | 4.8MB 24.4MB/s eta 0:0
+    71% |██████████████████████?
+    72% |█████████?
+    73% |███████████████████████▌        | 5.0MB 25.7MB/s eta 
+    74% |██████████████████
+    75% |██?
+    76% |████████████████████████?
+    77% |█████?
+    77% |████████████████████████▉    
+    78% |██████
+    79% |████████████████████████?
+    80% |█?
+    81% |████████████████████?
+    81% |██████████████████████████▏     | 5.6MB 26.5MB/s eta 0:00:
+    82% |█████████?
+    83% |█████████████████████████
+    84% |███████████████████████████     | 5.7MB 26.5MB/s eta 0:00:01
+    85% |█████████?
+    85% |█████████████████████?
+    86% |███████████████████████████▊    | 5.9MB 2
+    87%
+    88% |████████?
+    89% |█████████████████?
+    89% |██████████████████████████?
+    90% |█████████████████████████████   | 6.2MB 26.7
+    91% |█████████████████████████████▎  | 6.2MB 26.6MB/s eta 0:00:
+    
+    92% |███
+    93% |████████
+    94% |███████████?
+    95% |█████████████?
+    95% |███████████████?
+    96% |█████████████████?
+    97% |███████████████████
+    98% |█████████████████?
+    99% |████████████████?
+    99% |███████████████?
+    100% |████████████████████████████████| 6.8MB 210kB/s 
+Installing collected packages: django
+Successfully installed django-1.10
+
+
+
+
+(venv) ubuntu@ip-172-31-8-121:~/belt_app$ pip install bcrypt
+Collecting bcrypt
+  Downloading https://files.pythonhosted.org/packages/8b/1d/82826443777dd4a624e38a08957b975e75df859b381ae302cfd7a30783ed/bcrypt-3.1.7-cp34-abi3-manylinux1_x86_64.whl (56k
+B)
+    100% |████████████████████████████████| 61kB 6.5MB/s 
+Collecting cffi>=1.1 (from bcrypt)
+  Downloading https://files.pythonhosted.org/packages/5f/bf/6aa1925384c23ffeb579e97a5569eb9abce41b6310b329352b8252cee1c3/cffi-1.12.3-cp36-cp36m-manylinux1_x86_64.whl (430
+kB)
+    21% |██████▉   
+    38% |████████████▏                
+    54% |█████
+    68% |██████?
+    80% |█████████████████████████▉      | 348kB 
+
+    100% |████████████████████████████████| 440kB 2.8MB/s 
+Collecting six>=1.4.1 (from bcrypt)
+  Downloading https://files.pythonhosted.org/packages/73/fb/00a976f728d0d1fecfe898238ce23f502a721c0ac0ecfedb80e0d88c64e9/six-1.12.0-py2.py3-none-any.whl
+Collecting pycparser (from cffi>=1.1->bcrypt)
+  Downloading https://files.pythonhosted.org/packages/68/9e/49196946aee219aead1290e00d1e7fdeab8567783e83e1b9ab5585e6206a/pycparser-2.19.tar.gz (158kB)
+    51% |███████████
+    90% |████?
+    100% |████████████████████████████████| 163kB 6.7MB/s 
+Building wheels for collected packages: pycparser
+  Running setup.py bdist_wheel for pycparser ... error
+  Complete output from command /home/ubuntu/belt_app/venv/bin/python3 -u -c "import setuptools, tokenize;__file__='/tmp/pip-build-mo9cdab9/pycparser/setup.py';f=getattr(t
+okenize, 'open', open)(__file__);code=f.read().replace('\r\n', '\n');f.close();exec(compile(code, __file__, 'exec'))" bdist_wheel -d /tmp/tmp2ppnyknxpip-wheel- --python-t
+ag cp36:
+  usage: -c [global_opts] cmd1 [cmd1_opts] [cmd2 [cmd2_opts] ...]
+     or: -c --help [cmd1 cmd2 ...]
+     or: -c --help-commands
+     or: -c cmd --help
+  
+  error: invalid command 'bdist_wheel'
+  
+  ----------------------------------------
+  Failed building wheel for pycparser
+  Running setup.py clean for pycparser
+Failed to build pycparser
+Installing collected packages: pycparser, cffi, six, bcrypt
+  Running setup.py install for pycparser ... done
+Successfully installed bcrypt-3.1.7 cffi-1.12.3 pycparser-2.19 six-1.12.0
+
+
+
+
+
+(venv) ubuntu@ip-172-31-8-121:~/belt_app$ pip install gunicorn
+Collecting gunicorn
+  Downloading https://files.pythonhosted.org/packages/8c/da/b8dd8deb741bff556db53902d4706774c8e1e67265f69528c14c003644e6/gunicorn-19.9.0-py2.py3-none-any.whl (112kB)
+
+    100% |████████████████████████████████| 122kB 4.3MB/s 
+Installing collected packages: gunicorn
+Successfully installed gunicorn-19.9.0
+
+
+
+(venv) ubuntu@ip-172-31-8-121:~/belt_app$ ls
+BELT_EXAM  apps  manage.py  requirements.txt  venv
+(venv) ubuntu@ip-172-31-8-121:~/belt_app$ cd BELT_EXAM/
+(venv) ubuntu@ip-172-31-8-121:~/belt_app/BELT_EXAM$ ls
+__init__.py  settings.py  urls.py  wsgi.py
+
+
+(venv) ubuntu@ip-172-31-8-121:~/belt_app/BELT_EXAM$ vi settings.py 
+
+(venv) ubuntu@ip-172-31-8-121:~/belt_app$ python manage.py collectstatic
+
+You have requested to collect static files at the destination
+location as specified in your settings:
+
+    /home/ubuntu/belt_app/static
+
+This will overwrite existing files!
+Are you sure you want to do this?
+
+Type 'yes' to continue, or 'no' to cancel: yes
+Copying '/home/ubuntu/belt_app/apps/exam_app/static/exam_app/css/style.css'
+Copying '/home/ubuntu/belt_app/apps/login_app/static/login_app/css/style.css'
+Copying '/home/ubuntu/belt_app/apps/login_app/static/login_app/css/main.css'
+Copying '/home/ubuntu/belt_app/apps/login_app/static/login_app/js/wall.js'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/css/forms.css'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/css/rtl.css'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/css/login.css'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/css/fonts.css'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/css/base.css'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/css/changelists.css'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/css/dashboard.css'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/css/widgets.css'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/js/calendar.js'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/js/inlines.min.js'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/js/core.js'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/js/change_form.js'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/js/prepopulate.min.js'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/js/timeparse.js'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/js/SelectFilter2.js'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/js/popup_response.js'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/js/urlify.js'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/js/collapse.js'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/js/collapse.min.js'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/js/SelectBox.js'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/js/actions.js'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/js/prepopulate.js'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/js/jquery.init.js'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/js/prepopulate_init.js'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/js/cancel.js'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/js/inlines.js'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/js/actions.min.js'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/js/admin/RelatedObjectLookups.js'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/js/admin/DateTimeShortcuts.js'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/js/vendor/xregexp/xregexp.min.js'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/js/vendor/xregexp/xregexp.js'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/js/vendor/xregexp/LICENSE-XREGEXP.txt'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/js/vendor/jquery/jquery.js'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/js/vendor/jquery/jquery.min.js'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/js/vendor/jquery/LICENSE-JQUERY.txt'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/fonts/Roboto-Regular-webfont.woff'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/fonts/README.txt'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/fonts/Roboto-Light-webfont.woff'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/fonts/Roboto-Bold-webfont.woff'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/fonts/LICENSE.txt'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/img/icon-yes.svg'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/img/icon-addlink.svg'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/img/inline-delete.svg'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/img/selector-icons.svg'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/img/tooltag-arrowright.svg'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/img/README.txt'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/img/search.svg'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/img/tooltag-add.svg'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/img/icon-clock.svg'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/img/icon-unknown-alt.svg'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/img/calendar-icons.svg'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/img/icon-calendar.svg'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/img/icon-no.svg'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/img/LICENSE'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/img/sorting-icons.svg'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/img/icon-alert.svg'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/img/icon-changelink.svg'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/img/icon-unknown.svg'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/img/icon-deletelink.svg'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/img/gis/move_vertex_off.svg'
+Copying '/home/ubuntu/belt_app/venv/lib/python3.6/site-packages/django/contrib/admin/static/admin/img/gis/move_vertex_on.svg'
+
+65 static files copied to '/home/ubuntu/belt_app/static'.
+
+
+
+(venv) ubuntu@ip-172-31-8-121:~/belt_app$ python manage.py makemigrations
+No changes detected
+(venv) ubuntu@ip-172-31-8-121:~/belt_app$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, exam_app, login_app, sessions
+Running migrations:
+  Rendering model states... DONE
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying login_app.0001_initial... OK
+  Applying login_app.0002_auto_20190822_2122... OK
+  Applying exam_app.0001_initial... OK
+  Applying exam_app.0002_auto_20190826_1725... OK
+  Applying exam_app.0003_auto_20190826_2053... OK
+  Applying exam_app.0004_auto_20190826_2116... OK
+  Applying exam_app.0005_auto_20190826_2147... OK
+  Applying exam_app.0006_auto_20190827_0047... OK
+  Applying sessions.0001_initial... OK
+
+
+
+
+(venv) ubuntu@ip-172-31-8-121:~/belt_app$ ls
+BELT_EXAM  apps  db.sqlite3  manage.py  requirements.txt  static  venv
+(venv) ubuntu@ip-172-31-8-121:~/belt_app$ gunicorn BELT_EXAM.wsgi
+[2019-08-27 01:51:06 +0000] [3245] [INFO] Starting gunicorn 19.9.0
+[2019-08-27 01:51:06 +0000] [3245] [INFO] Listening at: http://127.0.0.1:8000 (3245)
+[2019-08-27 01:51:06 +0000] [3245] [INFO] Using worker: sync
+[2019-08-27 01:51:06 +0000] [3248] [INFO] Booting worker with pid: 3248
+^C[2019-08-27 01:51:12 +0000] [3245] [INFO] Handling signal: int
+[2019-08-27 01:51:12 +0000] [3245] [INFO] Shutting down: Master
+
+
+
+(venv) ubuntu@ip-172-31-8-121:~/belt_app$ 
+(venv) ubuntu@ip-172-31-8-121:~/belt_app$ sudo vi /etc/systemd/system/gunicorn.service
+(venv) ubuntu@ip-172-31-8-121:~/belt_app$ sudo systemctl daemon-reload
+(venv) ubuntu@ip-172-31-8-121:~/belt_app$ sudo systemctl restart gunicorn
+(venv) ubuntu@ip-172-31-8-121:~/belt_app$ sudo systemctl status gunicorn
+● gunicorn.service - gunicorn daemon
+   Loaded: loaded (/etc/systemd/system/gunicorn.service; disabled; vendor preset: enabled)
+   Active: active (running) since Tue 2019-08-27 01:54:07 UTC; 10s ago
+ Main PID: 3283 (gunicorn)
+    Tasks: 4 (limit: 1152)
+   CGroup: /system.slice/gunicorn.service
+           ├─3283 /home/ubuntu/belt_app/venv/bin/python3 /home/ubuntu/belt_app/venv/bin/gunicorn --workers 3 --bind unix:/home/ubuntu/belt_app/BELT_EXAM.sock BELT_EXAM.ws
+
+           ├─3304 /home/ubuntu/belt_app/venv/bin/python3 /home/ubuntu/belt_app/venv/bin/gunicorn --workers 3 --bind unix:/home/ubuntu/belt_app/BELT_EXAM.sock BELT_EXAM.ws
+
+           ├─3306 /home/ubuntu/belt_app/venv/bin/python3 /home/ubuntu/belt_app/venv/bin/gunicorn --workers 3 --bind unix:/home/ubuntu/belt_app/BELT_EXAM.sock BELT_EXAM.ws
+
+           └─3307 /home/ubuntu/belt_app/venv/bin/python3 /home/ubuntu/belt_app/venv/bin/gunicorn --workers 3 --bind unix:/home/ubuntu/belt_app/BELT_EXAM.sock BELT_EXAM.ws
+
+
+Aug 27 01:54:07 ip-172-31-8-121 systemd[1]: Started gunicorn daemon.
+Aug 27 01:54:07 ip-172-31-8-121 gunicorn[3283]: [2019-08-27 01:54:07 +0000] [3283] [INFO] Starting gunicorn 19.9.0
+Aug 27 01:54:07 ip-172-31-8-121 gunicorn[3283]: [2019-08-27 01:54:07 +0000] [3283] [INFO] Listening at: unix:/home/ubuntu/belt_app/BELT_EXAM.sock (3283)
+Aug 27 01:54:07 ip-172-31-8-121 gunicorn[3283]: [2019-08-27 01:54:07 +0000] [3283] [INFO] Using worker: sync
+Aug 27 01:54:07 ip-172-31-8-121 gunicorn[3283]: [2019-08-27 01:54:07 +0000] [3304] [INFO] Booting worker with pid: 3304
+Aug 27 01:54:07 ip-172-31-8-121 gunicorn[3283]: [2019-08-27 01:54:07 +0000] [3306] [INFO] Booting worker with pid: 3306
+Aug 27 01:54:07 ip-172-31-8-121 gunicorn[3283]: [2019-08-27 01:54:07 +0000] [3307] [INFO] Booting worker with pid: 3307
+
+
+
+(venv) ubuntu@ip-172-31-8-121:~/belt_app$ ls
+BELT_EXAM  BELT_EXAM.sock  apps  db.sqlite3  manage.py  requirements.txt  static  venv
+(venv) ubuntu@ip-172-31-8-121:~/belt_app$ sudo vi /etc/nginx/sites-available/BELT_EXAM
+(venv) ubuntu@ip-172-31-8-121:~/belt_app$ sudo vi /etc/nginx/sites-available/BELT_EXAM
+(venv) ubuntu@ip-172-31-8-121:~/belt_app$ sudo ln -s /etc/nginx/sites-available/BELT_EXAM /etc/nginx/sites-enabled;
+
+
+
+(venv) ubuntu@ip-172-31-8-121:~/belt_app$ sudo nginx -t;
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+
+
+(venv) ubuntu@ip-172-31-8-121:~/belt_app$ sudo rm /etc/nginx/sites-enabled/default;
+(venv) ubuntu@ip-172-31-8-121:~/belt_app$ sudo service nginx restart;
+(venv) ubuntu@ip-172-31-8-121:~/belt_app$ 
+(venv) ubuntu@ip-172-31-8-121:~/belt_app$ 
+
+(venv) ubuntu@ip-172-31-8-121:~/belt_app$ exit
+exit
+
+Script done on 2019-08-27 02:03:12+0000

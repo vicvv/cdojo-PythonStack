@@ -1,0 +1,91 @@
+(djangoPy3Env) $ python manage.py makemigrations
+(djangoPy3Env) $ python manage.py migrate
+
+
+(djangoPy3Env) $ python manage.py shell
+Python 3.6.8 |Anaconda, Inc.| (default, Dec 29 2018, 19:04:46) 
+[GCC 4.2.1 Compatible Clang 4.0.1 (tags/RELEASE_401/final)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from apps.users_app.models import *
+>>> Users.objects.creat
+Users.objects.create(           Users.objects.creation_counter  
+>>> User.objects.create(first_name="Vicky",last_name="Vy",email_address="vicky@vicky.com")
+... 
+... )
+>>> User.objects.create(first_name="laura",last_name="classm",email_address="s@l.com")
+<Users: Users object>
+>>> User.objects.create(first_name="edd",last_name="classmxxx",email_address="xs@l.com")
+
+>>> Users.objects.all().values()
+<QuerySet [{'id': 1, 'first_name': 'Vicky', 'last_name': 'Vy', 'email_address': 'vicky@vicky.com', 'created_at': datetime.datetime(2019, 8, 19, 19, 39, 48, 109774, tzinfo=<UTC>), 'updated_at': datetime.datetime(2019, 8, 19, 19, 39, 48, 110588, tzinfo=<UTC>)}, {'id': 2, 'first_name': 'laura', 'last_name': 'classm', 'email_address': 's@l.com', 'created_at': datetime.datetime(2019, 8, 19, 19, 46, 40, 511592, tzinfo=<UTC>), 'updated_at': datetime.datetime(2019, 8, 19, 19, 46, 40, 511640, tzinfo=<UTC>)}, {'id': 3, 'first_name': 'edd', 'last_name': 'classmxxx', 'email_address': 'xs@l.com', 'created_at': datetime.datetime(2019, 8, 19, 19, 47, 2, 95776, tzinfo=<UTC>), 'updated_at': datetime.datetime(2019, 8, 19, 19, 47, 2, 95820, tzinfo=<UTC>)}]>
+>>> 
+
+>>> from apps.users_app.models import *
+>>> first = Users.objects.get(id=1)
+>>> first.id
+1
+
+>>> exit()
+(djangoPy3Env) $ python manage.py shell
+Python 3.6.8 |Anaconda, Inc.| (default, Dec 29 2018, 19:04:46) 
+[GCC 4.2.1 Compatible Clang 4.0.1 (tags/RELEASE_401/final)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from apps.users_app.models import *
+>>> first = Users.objects.get(id=1)
+>>> first.id
+1
+>>> first
+<Users: Users object>
+>>> first.first_name
+'Vicky'
+>>> first.last_name
+'Vy'
+>>> first.email_address
+'vicky@vicky.com'
+>>> exit()
+(djangoPy3Env) $ python manage.py shell
+Python 3.6.8 |Anaconda, Inc.| (default, Dec 29 2018, 19:04:46) 
+[GCC 4.2.1 Compatible Clang 4.0.1 (tags/RELEASE_401/final)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from apps.users_app.models import *
+>>> first = Users.objects.get(id=1)
+>>> first
+<Users: Users object>
+>>> first.id
+1
+
+>>> last = Users.objects.last()
+>>> last.id
+3
+>>> last.first_name = "Pacakes"
+>>> last.first_name
+'Pacakes'
+>>> last.save()
+>>> second = Users.objects.get(id=2)
+>>> second.first_name
+'laura'                   
+>>> second.delete()
+(1, {'users_app.Users': 1})
+
+
+>>> from apps.users_app.models import *
+>>> allu = Users.objects.all().values()
+>>> allu
+<QuerySet [{'id': 1, 'first_name': 'Vicky', 'last_name': 'Vy', 'email_address': 'vicky@vicky.com', 'created_at': datetime.datetime(2019, 8, 19, 19, 39, 48, 109774, tzinfo=<UTC>), 'updated_at': datetime.datetime(2019, 8, 19, 19, 39, 48, 110588, tzinfo=<UTC>)}, {'id': 3, 'first_name': 'Pacakes', 'last_name': 'classmxxx', 'email_address': 'xs@l.com', 'created_at': datetime.datetime(2019, 8, 19, 19, 47, 2, 95776, tzinfo=<UTC>), 'updated_at': datetime.datetime(2019, 8, 19, 20, 7, 3, 261706, tzinfo=<UTC>)}]>
+
+
+>>> allu.values()
+<QuerySet [{'id': 1, 'first_name': 'Vicky', 'last_name': 'Vy', 'email_address': 'vicky@vicky.com', 'created_at': datetime.datetime(2019, 8, 19, 19, 39, 48, 109774, tzinfo=<UTC>), 'updated_at': datetime.datetime(2019, 8, 19, 19, 39, 48, 110588, tzinfo=<UTC>)}, {'id': 3, 'first_name': 'Pacakes', 'last_name': 'classmxxx', 'email_address': 'xs@l.com', 'created_at': datetime.datetime(2019, 8, 19, 19, 47, 2, 95776, tzinfo=<UTC>), 'updated_at': datetime.datetime(2019, 8, 19, 20, 7, 3, 261706, tzinfo=<UTC>)}]>
+
+
+
+>>> allu.order_by('first_name')
+<QuerySet [{'id': 3, 'first_name': 'Pacakes', 'last_name': 'classmxxx', 'email_address': 'xs@l.com', 'created_at': datetime.datetime(2019, 8, 19, 19, 47, 2, 95776, tzinfo=<UTC>), 'updated_at': datetime.datetime(2019, 8, 19, 20, 7, 3, 261706, tzinfo=<UTC>)}, {'id': 1, 'first_name': 'Vicky', 'last_name': 'Vy', 'email_address': 'vicky@vicky.com', 'created_at': datetime.datetime(2019, 8, 19, 19, 39, 48, 109774, tzinfo=<UTC>), 'updated_at': datetime.datetime(2019, 8, 19, 19, 39, 48, 110588, tzinfo=<UTC>)}]>
+
+
+>>> allu.order_by('-first_name')
+<QuerySet [{'id': 1, 'first_name': 'Vicky', 'last_name': 'Vy', 'email_address': 'vicky@vicky.com', 'created_at': datetime.datetime(2019, 8, 19, 19, 39, 48, 109774, tzinfo=<UTC>), 'updated_at': datetime.datetime(2019, 8, 19, 19, 39, 48, 110588, tzinfo=<UTC>)}, {'id': 3, 'first_name': 'Pacakes', 'last_name': 'classmxxx', 'email_address': 'xs@l.com', 'created_at': datetime.datetime(2019, 8, 19, 19, 47, 2, 95776, tzinfo=<UTC>), 'updated_at': datetime.datetime(2019, 8, 19, 20, 7, 3, 261706, tzinfo=<UTC>)}]>
+>>> 

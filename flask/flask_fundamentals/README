@@ -1,0 +1,11 @@
+
+
+
+
+cd flask_fundamentals/
+% source /Users/vicky/Desktop/DOJO_all/python_stack/flask/flask_fundamentals/py3Env/bin/activate 
+flask --version
+lsof -Pnl +M -i -cmd | grep -E "LISTEN|TCP|UDP"| grep 5000
+
+
+

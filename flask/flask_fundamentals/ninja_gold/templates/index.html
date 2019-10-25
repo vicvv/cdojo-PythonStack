@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Document</title>
+</head>
+<body>   
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-12">
+                <table class="table">
+                        <thead class="thead-light">
+                            <tr>
+                            <th><h3>Your gold: <span class="border border-dark px-5 py-1">{{session['gold']}}</span></h3></th>
+                            <th><h3 class="{{tcolor}}" class="{{invisible}}" >{{message}}</h3></th>
+                            <th>
+                                <form action="/process" method="post">
+                                    <input type="submit" class="btn btn-secondary my-2" name="reset" value="reset" {{disabled}}>
+                                </form>
+                            </th>        
+                            </tr>
+                        </thead>
+                </table>   
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Farm</h4>
+                        <p class="card-title">(earn 10 - 20 gold)</p>
+                        <form action="/process" method="post">
+                            <input type="hidden" name="building" value="farm">
+                            <button class="btn btn-primary">Find Gold</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Cave</h4>
+                        <p class="card-title">(earn 5 - 10 gold)</p>
+                        <form action="/process" method="POST">
+                            <input type="hidden" name="building" value="cave">
+                            <button class="btn btn-primary">Find Gold</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">House</h4>
+                        <p class="card-title">(earn 2 - 5 gold)</p>
+                        <form action="/process" method="POST">
+                            <input type="hidden" name="building" value="house">
+                            <button class="btn btn-primary">Find Gold</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Casino</h4>
+                        <p class="card-title">(Earn/Takes 0 - 50 gold)</p>
+                        <form action='/process' method='post'>
+                            <input type="hidden" name="building" value="casino">
+                            <button class="btn btn-primary">Find Gold</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 ">
+                <h3>Activities</h3>
+                <div class="card">
+                    <div class="card-body anyClass" >  
+                            {%for items in session['gameresult']%}                     
+                                <p class="card-text {{items['color']}}" >{{items['result']}}</p>
+                            {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

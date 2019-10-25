@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='survey_style.css') }}">
+    <title>Survey Result</title>
+</head>
+<body>
+    <p>Full Name: {{name}}</p>
+    <p>Email: {{email}}</p>
+    <p>Dojo Location: {{location}}</p>
+    <p>Fav Language: {{language}}</p>
+    <p>Do you like dogs?: {{dogs}}</p>
+    <p>What pet do you own: it's a {{pet}} !!!</p>
+    <p>Coments: {{coment}}</p>
+</body>
+</html>

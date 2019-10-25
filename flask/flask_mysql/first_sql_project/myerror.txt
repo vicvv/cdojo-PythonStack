@@ -1,0 +1,121 @@
+I have this html file :
+
+
+
+and I have this server file:
+
+from flask import Flask, render_template
+from mysqlconnection import connectToMySQL
+
+app = Flask(__name__)
+@app.route("/")
+def index():
+    mysql = connectToMySQL('demo_db')
+    print(mysql)
+    friends = mysql.query_db('SELECT * FROM friends;')  
+    print(friends, type(friends))
+    for friend in friends:
+        print(friend['first_name'])
+    return render_template("index.html")
+            
+if __name__ == "__main__":
+    app.run(debug=True)
+
+
+
+I have this index.html:
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="jumbotron"></div>
+    <table class="table">
+            <thead class="thead-light">
+                <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>ocupation</th>
+                <th>created_at</th>
+                <th>updated_at</th>
+                </tr>
+            </thead>
+            <tbody>
+                    {% for friend in friends %}
+                    <tr><td>{{ friend['first_name'] }}</td> <td>{{ friend['last_name'] }}</td>
+                        <td>{{ friend['occupation'] }} </td><td>{{ friend['created_at'] }}</td>
+                        <td>{{ friend['updated_at'] }} </td>
+                    </tr>
+                    {% endfor %} 
+            </tbody>
+        </table>
+            
+</body>
+</html>
+
+
+
+
+This is my console output:
+
+WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 134-896-134
+<mysqlconnection.MySQLConnection object at 0x106f62eb8>
+Running Query: SELECT * FROM friends;
+[{'id': 1, 'first_name': 'Vicky', 'last_name': 'Vyedina', 'occupation': 'none', 'created_at': datetime.datetime(2019, 8, 11, 13, 32, 45), 'updated_at': datetime.datetime(2019, 8, 11, 13, 32, 45)}, {'id': 2, 'first_name': 'Laura', 'last_name': 'LastName', 'occupation': 'student', 'created_at': datetime.datetime(2019, 8, 11, 13, 34, 9), 'updated_at': datetime.datetime(2019, 8, 11, 13, 34, 9)}] <class 'list'>
+Vicky
+Laura
+127.0.0.1 - - [11/Aug/2019 14:13:26] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [11/Aug/2019 14:13:26] "GET /static/css/style.css HTTP/1.1" 404 -
+127.0.0.1 - - [11/Aug/2019 14:19:12] "GET /static/css/style.css HTTP/1.1" 404 -
+
+
+And I have this output:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="jumbotron"></div>
+    <table class="table">
+            <thead class="thead-light">
+                <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>ocupation</th>
+                <th>created_at</th>
+                <th>updated_at</th>
+                </tr>
+            </thead>
+            <tbody>
+                     
+            </tbody>
+        </table>
+            
+</body>
+</html>
+
+
+
+why??

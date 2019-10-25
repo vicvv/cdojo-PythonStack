@@ -1,0 +1,297 @@
+Script started on Mon Aug 19 12:29:43 2019
+[?1034h(djangoPy3Env) $ /Users/vicky/anaconda3/bin/python /Users/vicky/Desktop/DOJO_all/python_stack/django/django_inntro/time_display/apps/random_word/urls.py[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C/Users/vicky/anaconda3/bin/python /Users/vicky/Desktop/DOJO_all/python_stack/django/django_inntro/time_display/apps/random_word/urls.py[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpython manage.py makemigrations
+No changes detected
+(djangoPy3Env) $ python manage.py makemigrations
+[36;1mMigrations for 'users_app':[0m
+  [1mapps/users_app/migrations/0002_auto_20190819_1930.py[0m:
+    - Alter field email_address on users
+(djangoPy3Env) $ python manage.py makemigrations[K[K[K[K[K[K[K[K[K[K[K[K[Kigrate
+[36;1mOperations to perform:[0m
+[1m  Apply all migrations: [0madmin, auth, contenttypes, sessions, users_app
+[36;1mRunning migrations:[0m
+  Rendering model states...[32;1m DONE[0m
+  Applying contenttypes.0001_initial...[32;1m OK[0m
+  Applying auth.0001_initial...[32;1m OK[0m
+  Applying admin.0001_initial...[32;1m OK[0m
+  Applying admin.0002_logentry_remove_auto_add...[32;1m OK[0m
+  Applying contenttypes.0002_remove_content_type_name...[32;1m OK[0m
+  Applying auth.0002_alter_permission_name_max_length...[32;1m OK[0m
+  Applying auth.0003_alter_user_email_max_length...[32;1m OK[0m
+  Applying auth.0004_alter_user_username_opts...[32;1m OK[0m
+  Applying auth.0005_alter_user_last_login_null...[32;1m OK[0m
+  Applying auth.0006_require_contenttypes_0002...[32;1m OK[0m
+  Applying auth.0007_alter_validators_add_error_messages...[32;1m OK[0m
+  Applying auth.0008_alter_user_username_max_length...[32;1m OK[0m
+  Applying sessions.0001_initial...[32;1m OK[0m
+  Applying users_app.0001_initial...[32;1m OK[0m
+  Applying users_app.0002_auto_20190819_1930...[32;1m OK[0m
+(djangoPy3Env) $ oython[K[K[K[K[K[Kpython manage.py shell
+Python 3.6.8 |Anaconda, Inc.| (default, Dec 29 2018, 19:04:46) 
+[GCC 4.2.1 Compatible Clang 4.0.1 (tags/RELEASE_401/final)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from apps.users_app.models import *
+>>> Users.objects.creat
+Users.objects.create(           Users.objects.creation_counter  
+>>> Users.objects.create(first_name="Vicky",last_name="Vy",email_address="vicky@vicky.com"))[K[K
+... 
+... )
+<Users: Users object>
+>>> Users.op[Kbjects.
+Users.objects.aggregate(            Users.objects.defer(                Users.objects.model(
+Users.objects.all(                  Users.objects.distinct(             Users.objects.name
+Users.objects.annotate(             Users.objects.earliest(             Users.objects.none(
+Users.objects.auto_created          Users.objects.exclude(              Users.objects.only(
+Users.objects.bulk_create(          Users.objects.exists(               Users.objects.order_by(
+--More--[KUsers.objects.check(                Users.objects.extra(                Users.objects.prefetch_related(
+Users.objects.complex_filter(       Users.objects.filter(               Users.objects.raw(
+Users.objects.contribute_to_class(  Users.objects.first(                Users.objects.reverse(
+Users.objects.count(                Users.objects.from_queryset(        Users.objects.select_for_update(
+Users.objects.create(               Users.objects.get(                  Users.objects.select_related(
+--More--[KUsers.objects.creation_counter      Users.objects.get_or_create(        Users.objects.update(
+Users.objects.dates(                Users.objects.get_queryset(         Users.objects.update_or_create(
+Users.objects.datetimes(            Users.objects.in_bulk(              Users.objects.use_in_migrations
+Users.objects.db                    Users.objects.iterator(             Users.objects.using(
+Users.objects.db_manager(           Users.objects.last(                 Users.objects.values(
+--More--[KUsers.objects.deconstruct(          Users.objects.latest(               Users.objects.values_list(
+>>> Users.objects.select_[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K)Users.objects.create(first_name="Vicky",last_name="Vy",email_address="vicky@vicky.com")[1P",last_name="Vy",email_address="vicky@vicky.com")[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P",last_name="Vy",email_address="vicky@vicky.com")[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P",last_name="Vy",email_address="vicky@vicky.com")[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P",last_name="Vy",email_address="vicky@vicky.com")[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P",last_name="Vy",email_address="vicky@vicky.com")[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cl",last_name="Vy",email_address="vicky@vicky.com")[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ca",last_name="Vy",email_address="vicky@vicky.com")[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cu",last_name="Vy",email_address="vicky@vicky.com")[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cr",last_name="Vy",email_address="vicky@vicky.com")[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ca",last_name="Vy",email_address="vicky@vicky.com")[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P",email_address="vicky@vicky.com")[1P",email_address="vicky@vicky.com")c",email_address="vicky@vicky.com")l",email_address="vicky@vicky.com")a",email_address="vicky@vicky.com")s",email_address="vicky@vicky.com")s",email_address="vicky@vicky.com")m",email_address="vicky@vicky.com")[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P.com")[1P.com")[1P.com")[1P.com")[1P.com")[1P.com")[1P.com")[1P.com")[1P.com")[1P.com")[1P.com")s.com")@.com")l.com")
+<Users: Users object>
+>>> Users.objects.create(first_name="laura",last_name="classm",email_address="s@l.com")[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cxs@l.com")x",email_address="xs@l.com")x",email_address="xs@l.com")x",email_address="xs@l.com")[1P",last_name="classmxxx",email_address="xs@l.com")[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P",last_name="classmxxx",email_address="xs@l.com")[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P",last_name="classmxxx",email_address="xs@l.com")[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P",last_name="classmxxx",email_address="xs@l.com")[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P",last_name="classmxxx",email_address="xs@l.com")[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ce",last_name="classmxxx",email_address="xs@l.com")[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cd",last_name="classmxxx",email_address="xs@l.com")[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cd",last_name="classmxxx",email_address="xs@l.com")[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+<Users: Users object>
+>>> Users.objects.a
+Users.objects.aggregate(    Users.objects.annotate(     
+Users.objects.all(          Users.objects.auto_created  
+>>> Users.objects.all(values)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'values' is not defined
+>>> Users.objects.all(values)[K[K[K[K[K[K[K).values()
+<QuerySet [{'id': 1, 'first_name': 'Vicky', 'last_name': 'Vy', 'email_address': 'vicky@vicky.com', 'created_at': datetime.datetime(2019, 8, 19, 19, 39, 48, 109774, tzinfo=<UTC>), 'updated_at': datetime.datetime(2019, 8, 19, 19, 39, 48, 110588, tzinfo=<UTC>)}, {'id': 2, 'first_name': 'laura', 'last_name': 'classm', 'email_address': 's@l.com', 'created_at': datetime.datetime(2019, 8, 19, 19, 46, 40, 511592, tzinfo=<UTC>), 'updated_at': datetime.datetime(2019, 8, 19, 19, 46, 40, 511640, tzinfo=<UTC>)}, {'id': 3, 'first_name': 'edd', 'last_name': 'classmxxx', 'email_address': 'xs@l.com', 'created_at': datetime.datetime(2019, 8, 19, 19, 47, 2, 95776, tzinfo=<UTC>), 'updated_at': datetime.datetime(2019, 8, 19, 19, 47, 2, 95820, tzinfo=<UTC>)}]>
+>>> 
+KeyboardInterrupt
+>>> exit()
+(djangoPy3Env) $ python manage.py shell
+Python 3.6.8 |Anaconda, Inc.| (default, Dec 29 2018, 19:04:46) 
+[GCC 4.2.1 Compatible Clang 4.0.1 (tags/RELEASE_401/final)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from apps.users_app.models import *
+>>> first[K[K[K[K[Kfirst = Users.objects.get(id=1)
+>>> first
+<Users: Users object>
+>>> first.name
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Users' object has no attribute 'name'
+>>> first.id
+1
+>>> first.idname[K = Users.objects.get(id=1)[1P[1P[1P[1P[1P[1@s[1@e[1@c[1@o[1@n[1@d[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1P[1P[1P[1P[1P[1@a[1@l[1@l[1@u[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P)[1P)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "/Users/vicky/Desktop/DOJO_all/python_stack/django/djangoPy3Env/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/vicky/Desktop/DOJO_all/python_stack/django/djangoPy3Env/lib/python3.6/site-packages/django/db/models/query.py", line 376, in get
+    clone = self.filter(*args, **kwargs)
+  File "/Users/vicky/Desktop/DOJO_all/python_stack/django/djangoPy3Env/lib/python3.6/site-packages/django/db/models/query.py", line 794, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Users/vicky/Desktop/DOJO_all/python_stack/django/djangoPy3Env/lib/python3.6/site-packages/django/db/models/query.py", line 812, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/Users/vicky/Desktop/DOJO_all/python_stack/django/djangoPy3Env/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1227, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Users/vicky/Desktop/DOJO_all/python_stack/django/djangoPy3Env/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1253, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/Users/vicky/Desktop/DOJO_all/python_stack/django/djangoPy3Env/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1130, in build_filter
+    arg, value = filter_expr
+TypeError: 'builtin_function_or_method' object is not iterable
+>>> exit()
+(djangoPy3Env) $ python manage.py shell
+Python 3.6.8 |Anaconda, Inc.| (default, Dec 29 2018, 19:04:46) 
+[GCC 4.2.1 Compatible Clang 4.0.1 (tags/RELEASE_401/final)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from apps.usr[Kers_app.Models[K[K[K[K[K[Kmodels import *
+>>> first.Users.op[Kb[K[K[K[K[K[K[K[K[K = Users.objects.get(id = 1[K[K[K[K=1)
+>>> first.id
+1
+>>> first
+<Users: Users object>
+>>> first.first_name
+'Vicky'
+>>> first.last_name
+'Vy'
+>>> first.ea[Kmail.[K
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Users' object has no attribute 'email'
+>>> first.email_address
+'vicky@vicky.com'
+>>> exit()
+(djangoPy3Env) $ python manage.py shell
+Python 3.6.8 |Anaconda, Inc.| (default, Dec 29 2018, 19:04:46) 
+[GCC 4.2.1 Compatible Clang 4.0.1 (tags/RELEASE_401/final)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from user[K[K[K[Kapps.users_ao[Kpp/[K.models import *
+>>> first = User.[Ks.objects.get(id=1)
+>>> first
+<Users: Users object>
+>>> first.id
+1
+>>> last = Users.objects.get[K[K[K
+Users.objects.aggregate(            Users.objects.defer(                Users.objects.model(
+Users.objects.all(                  Users.objects.distinct(             Users.objects.name
+Users.objects.annotate(             Users.objects.earliest(             Users.objects.none(
+Users.objects.auto_created          Users.objects.exclude(              Users.objects.only(
+Users.objects.bulk_create(          Users.objects.exists(               Users.objects.order_by(
+--More--[KUsers.objects.check(                Users.objects.extra(                Users.objects.prefetch_related(
+Users.objects.complex_filter(       Users.objects.filter(               Users.objects.raw(
+Users.objects.contribute_to_class(  Users.objects.first(                Users.objects.reverse(
+Users.objects.count(                Users.objects.from_queryset(        Users.objects.select_for_update(
+Users.objects.create(               Users.objects.get(                  Users.objects.select_related(
+--More--[KUsers.objects.creation_counter      Users.objects.get_or_create(        Users.objects.update(
+Users.objects.dates(                Users.objects.get_queryset(         Users.objects.update_or_create(
+Users.objects.datetimes(            Users.objects.in_bulk(              Users.objects.use_in_migrations
+Users.objects.db                    Users.objects.iterator(             Users.objects.using(
+Users.objects.db_manager(           Users.objects.last(                 Users.objects.values(
+--More--[KUsers.objects.deconstruct(          Users.objects.latest(               Users.objects.values_list(
+>>> last = Users.objects.last(id)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "/Users/vicky/Desktop/DOJO_all/python_stack/django/djangoPy3Env/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+TypeError: last() takes 1 positional argument but 2 were given
+>>> last = Users.objects.last(id)[K[K[K)
+>>> last.id
+3
+>>> last.name = "[K[K[K[K[K[K[K[Kfirst_name = "Panka[K[Kck[K[K[Kcakes"
+>>> last.first_name = "Pacakes"[K[K[K[K[K[K[K[K[K[K[K[K
+'Pacakes'
+>>> last.save()
+>>> second = Users.objects.get(id=2)
+>>> second.first_name
+'laura'
+>>> second.
+second.DoesNotExist(                second.from_db(                     second.pk
+second.MultipleObjectsReturned(     second.full_clean(                  second.prepare_database_save(
+second.check(                       second.get_deferred_fields(         second.refresh_from_db(
+second.clean(                       second.get_next_by_created_at(      second.save(
+second.clean_fields(                second.get_next_by_updated_at(      second.save_base(
+--More--[Ksecond.created_at                   second.get_previous_by_created_at(  second.serializable_value(
+second.date_error_message(          second.get_previous_by_updated_at(  second.unique_error_message(
+second.delete(                      second.id                           second.updated_at
+second.email_address                second.last_name                    second.validate_unique(
+second.first_name                   second.objects                      
+>>> second.delete()
+(1, {'users_app.Users': 1})
+>>> second.delete()first_name = Users.objects.get(id=2)[C[C[C[C[21Plast.save()first_name = "Pacakes"[C[C[C[C[C[C[C[C[Cid[K = Users.objects.last()id)[C[C[C[Cfirst.id[K[K = Users.objects.get(id=1)[C[C[C[C[Crom apps.users_app.models import *[C[C[C[C[C[4Pirst = Users.objects.get(id=1)[C[C[C[C[C[C[C[C[C[K.id[C[C[C[Clast = Users.objects.last(id)[2P)[C[C[C[C[C[C[C[C.id[Kfirst_name = "Pacakes"[K[4Psave()[C[C[C[Csecond = Users.objects.get(id=2)[C[C[C[C[C[C[C[C[C[C[15P.first_name[2Pdelete()[C[C[C[C[Kall =[K[K[Klu = Users.objects.a
+Users.objects.aggregate(    Users.objects.annotate(     
+Users.objects.all(          Users.objects.auto_created  
+>>> allu = Users.objects.all()
+>>> allu
+<QuerySet [<Users: Users object>, <Users: Users object>]>
+>>> allu.
+allu.aggregate(                        allu.in_bulk(
+allu.all(                              allu.is_compatible_query_object_type(
+allu.annotate(                         allu.iterator(
+allu.as_manager(                       allu.last(
+allu.bulk_create(                      allu.latest(
+--More--[Kallu.complex_filter(                   allu.model(
+allu.count(                            allu.none(
+allu.create(                           allu.only(
+allu.dates(                            allu.order_by(
+allu.datetimes(                        allu.ordered
+--More--[Kallu.db                                allu.prefetch_related(
+allu.defer(                            allu.query
+allu.delete(                           allu.raw(
+allu.distinct(                         allu.reverse(
+allu.earliest(                         allu.select_for_update(
+--More--[Kallu.exclude(                          allu.select_related(
+allu.exists(                           allu.update(
+allu.extra(                            allu.update_or_create(
+allu.filter(                           allu.using(
+allu.first(                            allu.value_annotation
+--More--[Kallu.get(                              allu.values(
+allu.get_or_create(                    allu.values_list(
+>>> allu.query
+<django.db.models.sql.query.Query object at 0x104053d68>
+>>> allu.first_name
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'QuerySet' object has no attribute 'first_name'
+>>> allu.values_list
+<bound method QuerySet.values_list of <QuerySet [<Users: Users object>, <Users: Users object>]>>
+>>> Users.objects.all().values()
+<QuerySet [{'id': 1, 'first_name': 'Vicky', 'last_name': 'Vy', 'email_address': 'vicky@vicky.com', 'created_at': datetime.datetime(2019, 8, 19, 19, 39, 48, 109774, tzinfo=<UTC>), 'updated_at': datetime.datetime(2019, 8, 19, 19, 39, 48, 110588, tzinfo=<UTC>)}, {'id': 3, 'first_name': 'Pacakes', 'last_name': 'classmxxx', 'email_address': 'xs@l.com', 'created_at': datetime.datetime(2019, 8, 19, 19, 47, 2, 95776, tzinfo=<UTC>), 'updated_at': datetime.datetime(2019, 8, 19, 20, 7, 3, 261706, tzinfo=<UTC>)}]>
+>>> exit()
+(djangoPy3Env) $ python manage.py shell
+Python 3.6.8 |Anaconda, Inc.| (default, Dec 29 2018, 19:04:46) 
+[GCC 4.2.1 Compatible Clang 4.0.1 (tags/RELEASE_401/final)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from apps.users)[K_app.modelsl[K[Ks import *
+>>> allu = Users.objects.all().values()
+>>> allu
+<QuerySet [{'id': 1, 'first_name': 'Vicky', 'last_name': 'Vy', 'email_address': 'vicky@vicky.com', 'created_at': datetime.datetime(2019, 8, 19, 19, 39, 48, 109774, tzinfo=<UTC>), 'updated_at': datetime.datetime(2019, 8, 19, 19, 39, 48, 110588, tzinfo=<UTC>)}, {'id': 3, 'first_name': 'Pacakes', 'last_name': 'classmxxx', 'email_address': 'xs@l.com', 'created_at': datetime.datetime(2019, 8, 19, 19, 47, 2, 95776, tzinfo=<UTC>), 'updated_at': datetime.datetime(2019, 8, 19, 20, 7, 3, 261706, tzinfo=<UTC>)}]>
+>>> allu.
+allu.aggregate(                        allu.in_bulk(
+allu.all(                              allu.is_compatible_query_object_type(
+allu.annotate(                         allu.iterator(
+allu.as_manager(                       allu.last(
+allu.bulk_create(                      allu.latest(
+--More--[Kallu.complex_filter(                   allu.model(
+allu.count(                            allu.none(
+allu.create(                           allu.only(
+allu.dates(                            allu.order_by(
+allu.datetimes(                        allu.ordered
+--More--[Kallu.db                                allu.prefetch_related(
+allu.defer(                            allu.query
+allu.delete(                           allu.raw(
+allu.distinct(                         allu.reverse(
+allu.earliest(                         allu.select_for_update(
+--More--[Kallu.exclude(                          allu.select_related(
+allu.exists(                           allu.update(
+allu.extra(                            allu.update_or_create(
+allu.filter(                           allu.using(
+allu.first(                            allu.value_annotation
+--More--[Kallu.get(                              allu.values(
+allu.get_or_create(                    allu.values_list(
+>>> allu.
+allu.aggregate(                        allu.in_bulk(
+allu.all(                              allu.is_compatible_query_object_type(
+allu.annotate(                         allu.iterator(
+allu.as_manager(                       allu.last(
+allu.bulk_create(                      allu.latest(
+--More--[Kallu.complex_filter(                   allu.model(
+allu.count(                            allu.none(
+allu.create(                           allu.only(
+allu.dates(                            allu.order_by(
+allu.datetimes(                        allu.ordered
+--More--[Kallu.db                                allu.prefetch_related(
+allu.defer(                            allu.query
+allu.delete(                           allu.raw(
+allu.distinct(                         allu.reverse(
+allu.earliest(                         allu.select_for_update(
+--More--[Kallu.exclude(                          allu.select_related(
+allu.exists(                           allu.update(
+allu.extra(                            allu.update_or_create(
+allu.filter(                           allu.using(
+allu.first(                            allu.value_annotation
+--More--[Kallu.get(                              allu.values(
+allu.get_or_create(                    allu.values_list(
+>>> allu.values()
+<QuerySet [{'id': 1, 'first_name': 'Vicky', 'last_name': 'Vy', 'email_address': 'vicky@vicky.com', 'created_at': datetime.datetime(2019, 8, 19, 19, 39, 48, 109774, tzinfo=<UTC>), 'updated_at': datetime.datetime(2019, 8, 19, 19, 39, 48, 110588, tzinfo=<UTC>)}, {'id': 3, 'first_name': 'Pacakes', 'last_name': 'classmxxx', 'email_address': 'xs@l.com', 'created_at': datetime.datetime(2019, 8, 19, 19, 47, 2, 95776, tzinfo=<UTC>), 'updated_at': datetime.datetime(2019, 8, 19, 20, 7, 3, 261706, tzinfo=<UTC>)}]>
+>>> allu.order_by  [K[K('f[K[Kfr[Kirst_name)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'first_name' is not defined
+>>> allu.order_by(first_name)[K[K[K[K[K[K[K[K[K[K[K'firstn[K[Kt_name')
+<QuerySet [{'id': 3, 'first_name': 'Pacakes', 'last_name': 'classmxxx', 'email_address': 'xs@l.com', 'created_at': datetime.datetime(2019, 8, 19, 19, 47, 2, 95776, tzinfo=<UTC>), 'updated_at': datetime.datetime(2019, 8, 19, 20, 7, 3, 261706, tzinfo=<UTC>)}, {'id': 1, 'first_name': 'Vicky', 'last_name': 'Vy', 'email_address': 'vicky@vicky.com', 'created_at': datetime.datetime(2019, 8, 19, 19, 39, 48, 109774, tzinfo=<UTC>), 'updated_at': datetime.datetime(2019, 8, 19, 19, 39, 48, 110588, tzinfo=<UTC>)}]>
+>>> allu.order_by('first_name')-first_name')
+<QuerySet [{'id': 1, 'first_name': 'Vicky', 'last_name': 'Vy', 'email_address': 'vicky@vicky.com', 'created_at': datetime.datetime(2019, 8, 19, 19, 39, 48, 109774, tzinfo=<UTC>), 'updated_at': datetime.datetime(2019, 8, 19, 19, 39, 48, 110588, tzinfo=<UTC>)}, {'id': 3, 'first_name': 'Pacakes', 'last_name': 'classmxxx', 'email_address': 'xs@l.com', 'created_at': datetime.datetime(2019, 8, 19, 19, 47, 2, 95776, tzinfo=<UTC>), 'updated_at': datetime.datetime(2019, 8, 19, 20, 7, 3, 261706, tzinfo=<UTC>)}]>
+>>> exit()
+(djangoPy3Env) $ exit
+exit
+
+Script done on Mon Aug 19 13:38:59 2019

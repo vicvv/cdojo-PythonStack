@@ -1,0 +1,15 @@
+table {
+    border-collapse: collapse;
+    align-self: center;
+    min-width: 50%;
+  }
+
+
+  table, th, td {
+    border: 1px solid green
+  }
+
+  tr {
+    height: 50px;
+    vertical-align: bottom;
+  }

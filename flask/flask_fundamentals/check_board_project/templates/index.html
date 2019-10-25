@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Checkboard</title>
+    <!-- based on the folder structure on the right -->
+    <!-- linking a css style sheet -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/check_boards.css') }}">
+    <!-- linking a javascript file -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/check_boards.js') }}"></script>
+    <!-- linking an image -->
+    <!-- <img src="{{ url_for('static', filename='img/my_img.png') }}"> -->
+
+</head>
+<body>
+        <table>
+            {% for x in range(0,times): %}
+            <tr>
+                {% for y in range(0,times1): %}
+                    <td class="color{{(x+y)%2 + 1 }}"></td>                     
+                {% endfor %}              
+            </tr>
+            {% endfor %} 
+        </table>
+    
+</body>
+</html>

@@ -1,0 +1,47 @@
+{% extends "wall_app/base.html" %}
+{% block content %}
+
+<p>Welcome {{request.session.first_name}} {{request.session.id}}</p>
+    
+{% if post %}
+
+<h1>Edit Message</h1>
+<div class="row">
+   <div class="col-sm-10">
+        <div class="signup-form">
+            <form action="/home/newpost/editpost" method='POST'>
+                {% csrf_token %}
+                <div class="form-group">
+                    <textarea class="form-control"  rows="3" name="messagetext">{{messagetext}}</textarea>
+                  </div>               
+                <div class="form-group">
+                    <input type="hidden" value = post.id>
+                    <button type="submit" class="btn btn-primary btn-lg">Edit Message</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% else %}
+<h1>Add New Post</h1>
+<div class="row">
+   <div class="col-sm-10">
+        <div class="signup-form">
+            <form action="/home/newpost/newpostform" method='POST'>
+                {% csrf_token %}
+                <div class="form-group">
+                    <textarea class="form-control"  rows="3" name="messagetext"></textarea>
+                  </div>               
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-lg">Add Message</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{%endif%}
+{% endblock content %}
+

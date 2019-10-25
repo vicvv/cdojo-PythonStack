@@ -1,0 +1,173 @@
+(djangoPy3Env) $ $pmk
+Migrations for 'example':
+  apps/example/migrations/0005_auto_20190820_0021.py:
+    - Remove field author from book
+    - Remove field books from publisher
+    - Delete model Author
+    - Delete model Book
+    - Delete model Publisher
+(djangoPy3Env) $ 
+(djangoPy3Env) $ $pmk
+Migrations for 'example':
+  apps/example/migrations/0006_author_book_publisher.py:
+    - Create model Author
+    - Create model Book
+    - Create model Publisher
+(djangoPy3Env) $ $pmm
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, example, sessions
+Running migrations:
+  Rendering model states... DONE
+  Applying example.0005_auto_20190820_0021... OK
+  Applying example.0006_author_book_publisher... OK
+(djangoPy3Env) $ 
+
+(djangoPy3Env) $ $pmm
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, example, sessions
+Running migrations:
+  Rendering model states... DONE
+  Applying example.0005_auto_20190820_0021... OK
+  Applying example.0006_author_book_publisher... OK
+(djangoPy3Env) $ $pms
+Python 3.6.8 |Anaconda, Inc.| (default, Dec 29 2018, 19:04:46) 
+[GCC 4.2.1 Compatible Clang 4.0.1 (tags/RELEASE_401/final)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+
+
+#csharp = Book.objects.create(title="C Sharp",author=Author.objects.create(name="James Gosling"))
+#java = Book.objects.create(title="Java Book", author=Author.objects.create(name="Sun Microsystems"))
+#python = Book.objects.create(title="Python Book", author=Author.objects.create(name="Guido van Rossum"))
+#php = Book.objects.create(title="PHP Book", author=Author.objects.create(name="PHP person"))
+#ruby = Book.objects.create(title="Ruby Book", author=Author.objects.create(name="Ruby person"))
+
+!!!!!!!!Query: Create 5 books with the following names: C Sharp, Java, Python, PHP, Ruby
+
+csharp = Book.objects.create(title="C Sharp")
+java = Book.objects.create(title="Java Book")
+python = Book.objects.create(title="Python Book")
+php = Book.objects.create(title="PHP Book")
+ruby = Book.objects.create(title="Ruby Book")
+
+
+>>> exit()
+
+(djangoPy3Env) $ $pmk
+You are trying to add a non-nullable field 'notes' to author without a default; we can't do that (the database needs something to populate existing rows).
+Please select a fix:
+ 1) Provide a one-off default now (will be set on all existing rows with a null value for this column)
+ 2) Quit, and let me add a default in models.py
+Select an option: 1
+Please enter the default value now, as valid Python
+The datetime and django.utils.timezone modules are available, so you can do e.g. timezone.now
+Type 'exit' to exit this prompt
+>>> "notes"
+Migrations for 'example':
+  apps/example/migrations/0007_author_notes.py:
+    - Add field notes to author
+(djangoPy3Env) $ $pmm
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, example, sessions
+Running migrations:
+  Rendering model states... DONE
+  Applying example.0007_author_notes... OK
+(djangoPy3Env) $ $pms
+Python 3.6.8 |Anaconda, Inc.| (default, Dec 29 2018, 19:04:46) 
+[GCC 4.2.1 Compatible Clang 4.0.1 (tags/RELEASE_401/final)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>>
+
+
+    Query: Change the name of the C Sharp book to C#
+
+
+>>> myobj = Book.objects.get(title="C Sharp")
+>>> myobj.title = "C#"
+>>> myobj.save() 
+
+
+    !!!!!!!!different authors: Jane Austen, Emily Dickinson, Fyodor Dostoevksy, William Shakespeare, Lau Tzu
+
+Author.objects.create(first_name='Jane' ,last_name='Austin')
+Author.objects.create(first_name='Emily', last_name = 'Dickinson')
+Author.objects.create(name='Fyodor Dostoevsky')
+Author.objects.create(name='William Shakespeare')
+Author.objects.create(name='Lau Tzu')
+
+
+!!!!!!Query: Change the first name of the 4th author to Bill
+
+>>> myauthor = Author.objects.get(name="William Shakespeare")
+>>> myauthor.name
+'William Shakespeare'
+>>> myauthor.name = "Bill Shakespeare"
+>>> myauthor.save()
+>>> 
+
+!!!!!Query: Assign the first author to the first 2 books
+>>> first_author = Author.objects.get(id=1)
+>>> first_book = Book.objects.get(id=1)
+>>> second_book = Book.objects.get(id=2)
+>>> first_book.author.add(first_author)
+>>> second_book.author.add(first_author)
+>>> 
+
+
+mybooks = Book.objects.filter(id__in=[1,2,3])
+
+>>> mybooks = Book.objects.filter(id__in=[1,2,3])
+mybooks.values()[0]
+{'id': 1, 'title': 'C#', 'description': '', 'created_at': datetime.date(2019, 8, 20), 'updated_at': datetime.date(2019, 8, 20)}
+
+
+>>> mybooks.values()[0]['id']
+1
+!!!!!!!!!!!!!Query: Assign the second author to the first 3 books
+>>> second_author.book.add(mybooks.values()[0]['id'])
+>>> second_author.book.add(mybooks.values()[1]['id'])
+>>> second_author.book.add(mybooks.values()[2]['id'])
+>>> third_author=Author.objects.get(id=3)
+>>> third_author.book.add(mybooks.values()[0]['id'])
+>>> third_author.book.add(mybooks.values()[1]['id'])
+>>> third_author.book.add(mybooks.values()[2]['id'])
+
+>>> mybooks = Book.objects.all()
+>>> third_author.book.add(mybooks.values()[3]['id'])
+
+>>> forth_author=Author.objects.get(id=4)
+
+>>> forth_author.id
+4
+>>> for i in range(4):
+...     forth_author.book.add(mybooks.values()[i]['id'])
+... 
+
+>>> for i in range(6):
+...     forth_author.book.add(mybooks.values()[i]['id'])
+... 
+
+
+!!!!!Query: Find all the books that the 3rd author is part of>>> third_book.author.all()
+
+<QuerySet [<Author: Author object>, <Author: Author object>, <Author: Author object>]>
+>>> third_book.author.all().values()
+<QuerySet [{'id': 2, 'name': 'Sun Microsystems', 'notes': '', 'created_at': datetime.date(2019, 8, 20), 'updated_at': datetime.date(2019, 8, 20)}, {'id': 3, 'name': 'Guido van Rossum', 'notes': '', 'created_at': datetime.date(2019, 8, 20), 'updated_at': datetime.date(2019, 8, 20)}, {'id': 4, 'name': 'PHP person', 'notes': '', 'created_at': datetime.date(2019, 8, 20), 'updated_at': datetime.date(2019, 8, 20)}]>
+>>> 
+
+>>> third_book.author.remove(first_author)
+>>> second_book.author.add(Author.objects.get(id=5))
+
+
+Author.objects.get(id=3).book.all().values()
+<QuerySet [{'id': 1, 'title': 'C#', 'description': '', 'created_at': datetime.date(2019, 8, 20), 'updated_at': datetime.date(2019, 8, 20)}, {'id': 2, 'title': 'Java Book', 'description': '', 'created_at': datetime.date(2019, 8, 20), 'updated_at': datetime.date(2019, 8, 20)}, {'id': 3, 'title': 'Python Book', 'description': '', 'created_at': datetime.date(2019, 8, 20), 'updated_at': datetime.date(2019, 8, 20)}, {'id': 4, 'title': 'PHP Book', 'description': '', 'created_at': datetime.date(2019, 8, 20), 'updated_at': datetime.date(2019, 8, 20)}]>
+
+
+>>> Book.objects.get(id=3).author.all().values()
+<QuerySet [{'id': 2, 'name': 'Sun Microsystems', 'notes': '', 'created_at': datetime.date(2019, 8, 20), 'updated_at': datetime.date(2019, 8, 20)}, {'id': 3, 'name': 'Guido van Rossum', 'notes': '', 'created_at': datetime.date(2019, 8, 20), 'updated_at': datetime.date(2019, 8, 20)}, {'id': 4, 'name': 'PHP person', 'notes': '', 'created_at': datetime.date(2019, 8, 20), 'updated_at': datetime.date(2019, 8, 20)}]>
+
+
+
+
+

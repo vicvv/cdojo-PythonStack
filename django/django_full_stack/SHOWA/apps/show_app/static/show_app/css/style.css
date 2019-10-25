@@ -1,0 +1,26 @@
+body{
+    margin-left: 20em
+}
+
+.signup-form .btn {
+    font-size: 16px;
+    font-weight: bold;
+    background: #00c1c0;
+    border: none;
+    min-width: 140px;
+    outline: none !important;
+}
+
+.signup-form .btn:hover,
+.signup-form .btn:focus {
+    background: #00b3b3;
+}
+
+.signup-form a {
+    color: #00c1c0;
+    text-decoration: none;
+}
+
+.signup-form a:hover {
+    text-decoration: underline;
+}

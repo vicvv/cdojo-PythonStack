@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Render Box</title>
+    <!-- <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheets/style.css') }} />"> -->
+
+</head>
+<body>
+   <div style = "vertical-align: top;">
+    {% for x in range(0,times): %}    
+        <p style = "width: 10em; min-height: 10em; background-color:{{color}};vertical-align: top;display:inline-block; padding: 0.5em; margin: 4em;"></p>
+    {% endfor %}
+    </div>
+</body>
+</html>

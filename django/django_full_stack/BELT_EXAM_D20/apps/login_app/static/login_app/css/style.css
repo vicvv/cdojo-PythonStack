@@ -1,0 +1,36 @@
+body{
+    margin-left: 10em;
+}
+#mr{
+    margin-left: 60%;
+}
+#mr2{
+    margin-left: 15%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #444444;
+  }
+
+.signup-form .btn {
+    font-size: 16px;
+    font-weight: bold;
+    background: #00c1c0;
+    border: none;
+    min-width: 140px;
+    outline: none !important;
+}
+
+.signup-form .btn:hover,
+.signup-form .btn:focus {
+    background: #00b3b3;
+}
+
+.signup-form a {
+    color: #00c1c0;
+    text-decoration: none;
+}
+
+.signup-form a:hover {
+    text-decoration: underline;
+}

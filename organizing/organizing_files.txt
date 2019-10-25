@@ -1,0 +1,24 @@
+$ pwd
+/Users/vicky/Desktop/DOJO_all/python_stack
+$ tree -L 2
+.
+├── django
+│   ├── django_full_stack
+│   ├── django_intro
+│   └── django_orm
+├── flask
+│   ├── flask_fundamentals
+│   └── flask_mysql
+├── my_environments
+│   ├── my_first_virtenv
+│   └── practice_pip_and_virtual_env.txt
+└── python
+    ├── OOP
+    ├── data_structures
+    ├── fundamentals
+    ├── modular
+    └── unit_test_tdd
+
+15 directories, 1 file
+$ 
+

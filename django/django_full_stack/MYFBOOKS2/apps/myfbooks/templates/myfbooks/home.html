@@ -1,0 +1,64 @@
+{% extends "login_app/base.html" %}
+{% block content %}
+<h1>HOME Page</h1>
+<div class="row">
+
+    <div class="col-sm-50">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Book ID</th>
+                    <th>Book Title</th>
+                    <th>Book Description</th>
+                    <th>Uploaded by</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for book in liked_books %}
+                <tr>
+                    <td>{{book.id}} </td>
+                    <td>{{book.title}} </td>
+                    <td>{{book.description}}</td>
+                    <td>{{book.uploaded_by.first_name}}</td>
+
+                    {%if book.uploaded_by.id == request.session.id%}
+                    <td>
+                        <a href="{% url 'edit' book.id%}">Edit</a>|
+                        <a href="{% url 'view' book.id%}">View</a>
+                    </td>
+                    {%else%}
+                    <td>
+                        <a href="{% url 'view' book.id%}">View</a>|
+                        <a href="{% url 'unlike' book.id %}">UNLIKE</a>
+                    </td>
+                    {%endif%}
+                </tr>
+                {%endfor%}
+
+                {% for book in disliked_books %}
+                <tr>
+                    <td>{{book.id}} </td>
+                    <td>{{book.title}} </td>
+                    <td>{{book.description}}</td>
+                    <td>{{book.uploaded_by.first_name}}</td>
+                    {%if book.uploaded_by.id == request.session.id%}
+                    <td>
+                        <a href="{% url 'edit' book.id%}">Edit</a>|
+                        <a href="{% url 'view' book.id%}">View</a>|
+                        <a href="{% url 'delete' book.id%}">Delete</a>
+                    </td>
+                    {%else%}
+                    <td>
+                        <a href="{% url 'view' book.id%}">View</a>|
+                        <a href="{% url 'like' book.id %}">LIKE</a>
+                    </td>
+                    {%endif%}
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock content %}

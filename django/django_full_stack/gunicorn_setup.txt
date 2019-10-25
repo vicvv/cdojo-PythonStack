@@ -1,0 +1,316 @@
+
+DEPLOYMENT STEPS
+
+sudo apt-get update;
+sudo apt-get install nginx;
+git clone https://github.com/vicvv/belt_app;
+sudo apt-get install python3-venv;
+cd belt_app;
+
+
+python3 -m venv venv;          //We are using the venv command and naming our virtual env venv;
+source venv/bin/activate;
+
+
+(venv) ubuntu@54.162.31.253:~$ pip install django==1.10
+(venv) ubuntu@54.162.31.253:~$ pip install bcrypt
+(venv) ubuntu@54.162.31.253:~$ pip install gunicorn
+
+
+We're going to use a built-in text editor (VIM) in the terminal to update the code in settings.py.
+
+(venv) ubuntu@54.162.31.253:~/myRepoName/projectName$ sudo vim settings.py
+You'll need to add a line that allows you to serve static content. You'll also need to modify a couple of lines, as follows. Don't forget to type i to enter insert mode.
+
+# inside settings.py
+# modify these lines
+DEBUG = False
+ALLOWED_HOSTS = ['{{yourEC2.public.ip}}']	# keep the quotes!
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")	# add this line at the bottom; don't replace any existing lines!
+
+
+
+Save and quit. (esc, :wq, enter)
+
+Navigate back to the folder that holds manage.py. Make sure your virtual environment is still activated!
+
+(venv) ubuntu@54.162.31.253:~/myRepoName/projectName$ cd ..
+Gather all of the static files in your project into one location:
+
+(venv) ubuntu@54.162.31.253:~myRepoName$ python manage.py collectstatic	# type yes when prompted
+If you ignored your db and/or migrations files, this is a great time to also make and run migrations, just as you would have done on your local machine!
+
+(venv) ubuntu@54.162.31.253:~myRepoName$ python manage.py makemigrations
+(venv) ubuntu@54.162.31.253:~myRepoName$ python manage.py migrate
+
+
+
+
+Let's first test Gunicorn by directing it to our Django project's wsgi.py file, which is the entry point to our application.
+
+(venv) ubuntu@54.162.31.253:~myRepoName$ gunicorn {{project_name}}.wsgi
+If your Gunicorn process ran correctly, you will see something like the following printed to the terminal:
+
+[2016-12-27 05:45:56 +0000] [8695] [INFO] Starting gunicorn 19.6.0
+[2016-12-27 05:45:56 +0000] [8695] [INFO] Listening at: http://0.0.0.0:8000 (8695)
+[2016-12-27 05:45:56 +0000] [8695] [INFO] Using worker: sync
+[2016-12-27 05:45:56 +0000] [8700] [INFO] Booting worker with pid: 8700
+Exit the process by typing ctrl-c.
+
+Now we're going to set up Gunicorn to run as a service. You'll be using systemd as your init system to manage and control aspects of your server including services. The primary advantage of turning Gunicorn into a service is that Gunicorn will start with the server after being rebooted and once configured will just work. To be able to turn Gunicorn on and off, we're going to create a systemd service file and make some changes.
+
+ubuntu@54.162.31.253:~myRepoName$ sudo vim /etc/systemd/system/gunicorn.service
+In the VIM text editor, copy and paste the following code. Don't forget to type i before copying and pasting the lines below!
+
+
+
+[Unit]
+Description=gunicorn daemon
+After=network.target
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/belt_app
+ExecStart=/home/ubuntu/belt_app/venv/bin/gunicorn --workers 3 --bind unix:/home/ubuntu/belt_app/BELT_EXAM.sock BELT_EXAM.wsgi:application
+[Install]
+WantedBy=multi-user.target
+
+
+
+Now that our service file has been created, we can enable it so it starts on boot.
+
+ubuntu@54.162.31.253:~$ sudo systemctl daemon-reload	# systemctl ends with the letter L, not a number
+ubuntu@54.162.31.253:~$ sudo systemctl restart gunicorn
+ubuntu@54.162.31.253:~$ sudo systemctl status gunicorn
+You should see a green dot next to gunicorn.service and the lines "Booting worker with pid: ....". It should look like this;
+
+
+
+Note: if any additional changes are made to the gunicorn.service the previous three commands will need to be run in order to sync things up and restart our service.
+
+CHECK: Type ls. If you DO NOT see a {{projectName}}.sock file, double and triple check the file from above (case sensitivity, appropriate spacing, spelling, etc.).
+Troubleshooting Steps and Common Errors:
+If you see output that looks like this when you start your gunicorn service:
+
+
+It is likely that you cloned your repository with sudo or created your virtualenv with sudo. If that is the case, terminate your EC2 instance and start over.
+
+
+
+If you see output that looks like this:
+
+
+Read the error message it gives you. This will often be a typo in one of your configuration files. Another common error is not installing Gunicorn and Django in the same environment. Go over the steps again until you see the green dot output.
+
+
+
+
+
+
+
+
+
+
+
+
+
+sudo systemctl daemon-reload	
+sudo systemctl restart gunicorn
+sudo systemctl status gunicorn
+
+
+IMPORTANT
+Anywhere you see {{myRepoName}} – replace that whole thing INCLUDING the {{}} with your outer folder name (same as GitHub repository name).
+Anywhere you see {{projectName}} – replace that whole thing INCLUDING the {{}} with the project folder name (the name of your Django project).
+Anywhere you see {{yourEC2.public.ip}} – replace that whole thing INCLUDING the {{}} with the public IP address of your newly created server.
+If you named your repo something different from your project, the repo name and project name may be different, but it is okay if they are the same.
+
+Navigate into your main project directory, where settings.py lives.
+
+(venv) ubuntu@54.162.31.253:~/myRepoName$ cd BELT_EXAM
+
+
+We're going to use a built-in text editor (VIM) in the terminal to update the code in settings.py.
+
+(venv) ubuntu@54.162.31.253:~/myRepoName/projectName$ sudo vim settings.py
+You'll need to add a line that allows you to serve static content. You'll also need to modify a couple of lines, as follows. Don't forget to type i to enter insert mode.
+
+# inside settings.py
+# modify these lines:
+
+
+DEBUG = False
+ALLOWED_HOSTS = ['{{yourEC2.public.ip}}']	# keep the quotes!
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")	
+
+
+
+
+Navigate back to the folder that holds manage.py. Make sure your virtual environment is still activated!
+
+(venv) ubuntu@54.162.31.253:~/myRepoName/projectName$ cd ..
+Gather all of the static files in your project into one location:
+
+(venv) ubuntu@54.162.31.253:~myRepoName$ python manage.py collectstatic	# type yes 
+
+
+(venv) ubuntu@54.162.31.253:~myRepoName$ python manage.py makemigrations
+(venv) ubuntu@54.162.31.253:~myRepoName$ python manage.py migrate
+
+
+Gunicorn
+Objectives:
+Set up gunicorn
+You may remember that Gunicorn is our process manager. Let's get it set up.
+
+Let's first test Gunicorn by directing it to our Django project's wsgi.py file, which is the entry point to our application.
+
+(venv) ubuntu@54.162.31.253:~myRepoName$ gunicorn BELT_EXAM.wsgi
+If your Gunicorn process ran correctly, you will see something like the following printed to the terminal:
+
+[2016-12-27 05:45:56 +0000] [8695] [INFO] Starting gunicorn 19.6.0
+[2016-12-27 05:45:56 +0000] [8695] [INFO] Listening at: http://0.0.0.0:8000 (8695)
+[2016-12-27 05:45:56 +0000] [8695] [INFO] Using worker: sync
+[2016-12-27 05:45:56 +0000] [8700] [INFO] Booting worker with pid: 8700
+Exit the process by typing ctrl-c.
+
+Now we're going to set up Gunicorn to run as a service. You'll be using systemd as your init system to manage and control aspects of your server including services. The primary advantage of turning Gunicorn into a service is that Gunicorn will start with the server after being rebooted and once configured will just work. To be able to turn Gunicorn on and off, we're going to create a systemd service file and make some changes.
+
+ubuntu@54.162.31.253:~myRepoName$ sudo vim /etc/systemd/system/gunicorn.service
+In the VIM text editor, copy and paste the following code. Don't forget to type i before copying and pasting the lines below!
+
+[Unit]
+Description=gunicorn daemon
+After=network.target
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/{{myRepoName}}
+ExecStart=/home/ubuntu/{{myRepoName}}/venv/bin/gunicorn --workers 3 --bind unix:/home/ubuntu/{{myRepoName}}/{{projectName}}.sock {{projectName}}.wsgi:application
+[Install]
+WantedBy=multi-user.target
+Now that our service file has been created, we can enable it so it starts on boot.
+
+sudo systemctl daemon-reload	
+systemctl restart gunicorn
+sudo systemctl status gunicorn
+
+
+
+You should see a green dot next to gunicorn.service and the lines "Booting worker with pid: ....". It should look like this;
+
+
+
+Note: if any additional changes are made to the gunicorn.service the previous three commands will need to be run in order to sync things up and restart our service.
+
+CHECK: Type ls. If you DO NOT see a {{projectName}}.sock file, double and triple check the file from above (case sensitivity, appropriate spacing, spelling, etc.).
+Troubleshooting Steps and Common Errors:
+If you see output that looks like this when you start your gunicorn service:
+
+
+It is likely that you cloned your repository with sudo or created your virtualenv with sudo. If that is the case, terminate your EC2 instance and start over.
+
+
+
+If you see output that looks like this:
+
+
+Read the error message it gives you. This will often be a typo in one of your configuration files. Another common error is not installing Gunicorn and Django in the same environment. Go over the steps again until you see the green dot output.
+
+
+
+
+
+
+
+
+Nginx
+Objectives:
+Set up NGINX
+We now need to create a new file to configure NGINX, our web server.
+
+ubuntu@54.162.31.253:~$ sudo vim /etc/nginx/sites-available/{{projectName}}
+Add the following to this new document, editing what's inside curly braces {{}}. Don't forget to type i to enter insert mode.
+
+server {
+  listen 80;
+  server_name {{yourEC2.public.ip}};
+  location = /favicon.ico { access_log off; log_not_found off; }
+  location /static/ {
+      root /home/ubuntu/{{myRepoName}};
+  }
+  location / {
+      include proxy_params;
+      proxy_pass http://unix:/home/ubuntu/{{myRepoName}}/{{projectName}}.sock;
+  }
+}
+
+
+server {
+  listen 80;
+  server_name 54.193.54.60;
+  location = /favicon.ico { access_log off; log_not_found off; }
+  location /static/ {
+      root /home/ubuntu/belt_app;
+  }
+  location / {
+      include proxy_params;
+      proxy_pass http://unix:/home/ubuntu/belt_app/BELT_EXAM.sock;
+  }
+}
+
+
+
+Save and exit. (esc, :wq, enter)
+Now we're going to create a link to this file to let NGINX know what settings to use. Run the following (taking note of the space after {{projectName}}):
+
+ubuntu@54.162.31.253:~$ sudo ln -s /etc/nginx/sites-available/{{projectName}} /etc/nginx/sites-enabled
+
+
+
+CHECK: Make sure the link was successful. If not successful, double and triple check the file we just created.
+
+ubuntu@54.162.31.253:~$ sudo nginx -t
+Now that we have our custom configuration, we will remove the Nginx default site.
+
+ubuntu@54.162.31.253:~$ sudo rm /etc/nginx/sites-enabled/default
+All that is left to do is restart our NGINX server with our updated settings.
+
+ubuntu@54.162.31.253:~$ sudo service nginx restart
+
+
+
+
+
+
+
+
+
+sudo vim /etc/nginx/sites-available/BELT_EXAM
+
+
+server {
+  listen 80;
+  server_name 54.67.43.17;
+  location = /favicon.ico { access_log off; log_not_found off; }
+  location /static/ {
+      root /home/ubuntu/belt_app;
+  }
+  location / {
+      include proxy_params;
+      proxy_pass http://unix:/home/ubuntu/belt_app/BELT_EXAM.sock.sock;
+  }
+}
+
+
+
+sudo ln -s /etc/nginx/sites-available/BELT_EXAM /etc/nginx/sites-enabled;
+
+sudo nginx -t;
+
+sudo rm /etc/nginx/sites-enabled/default;
+
+sudo service nginx restart;
+
+
+

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Add Pat</title>
+</head>
+
+<body>
+    <div class="jumbotron">
+        <h1 class="display-3">Hey Dojos!</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Location</th>
+                    <th>Language</th>
+                    <th>message</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {%for dojo in dojos%}
+                <tr>
+                    <td>{{dojo['name']}}</td>
+                    <td>{{dojo['location']}}</td>
+                    <td>{{dojo['Language']}}</td>
+                    <td>{{dojo['message']}}</td>
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+
+        {% with messages = get_flashed_messages() %}     
+        <!-- declare a variable called messages -->
+            {% if messages %}                            
+        <!-- check if there are any messages -->
+            {% for message in messages %}            
+        <!-- loop through the messages -->
+            <p>{{message}}</p>                   
+        <!-- display each message in a paragraph tag -->
+                {% endfor %}
+        {% endif %}
+        {% endwith %}
+        
+        <form action=/add_dojo method="POST">
+            <div class="form-group row">
+                <label for="name" class="col-sm-2 col-form-label">Name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="name" placeholder="Dojo's Name">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <select class="custom-select" name="location">
+                    <option selected>Location</option>
+                    <option value="San Jose">San Jose</option>
+                    <option value="Seatle">Seatle</option>
+                    <option value="London">London</option>
+                </select>
+            </div>
+
+            <div class="form-group row">
+                <select class="custom-select" name="language">
+                    <option selected>Language</option>
+                    <option value="Python">Python</option>
+                    <option value="Java">Java</option>
+                    <option value="C#">C#</option>
+                </select>
+            </div>
+
+            <div class="form-group row">
+                <label for="exampleFormControlTextarea3">Additional info</label>
+                <textarea class="form-control" name="message" rows="7"></textarea>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Add dojo!</button>
+                </div>
+            </div>
+        </form>
+        
+
+    </div>
+</body>
+
+</html>

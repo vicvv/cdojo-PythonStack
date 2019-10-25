@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='survey_style.css') }}">
+    
+    <title>Dojo Survey</title>
+</head>
+<body>
+    <h1>Dojo Survey</h1>
+    <form action="/result" method="POST">
+        <p>Your Name:<input type="text" name="username"></p>
+        <p>Email: <input type="text" name="email"></p>
+        <p>Dojo Location: <select name="location">
+                <option value="San Jose">San Jose</option>
+                <option value="The MOON">The MOON</option>
+                <option value="Everywhere">Everywhere</option>
+                <option value="Not Sure">Not Sure</option>
+              </select>
+            </p>
+        <p>Favorite Language: <select name="language">
+                <option value="HTML">HTML</option>
+                <option value="CSS">CSS</option>
+                <option value="JAVASCRIPT">JAVASCRIPT</option>
+                <option value="Python">Python</option>
+              </select></p>
+        <p>Do you like dogs?
+            <input type="radio" name="dogs" value="yes" checked> No 
+            <input type="radio" name="dogs" value="no"> Yes 
+        </p>
+        <p>What pet do you own:
+            <input type="checkbox" name="pet" value="cat"> I have a cat
+            <input type="checkbox" name="pet" value="dog"> I have a dog
+            <input type="checkbox" name="pet" value="horse" checked> I have a horse
+        </p>
+        <p>Coment(optional)
+            <textarea name=coment> Optional Comment </textarea>
+        </p>
+            
+        <input type="submit">
+    </form>
+</body>
+</html>

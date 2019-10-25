@@ -1,0 +1,10 @@
+{% extends "login_app/base.html" %}
+{% block content %}
+    <h1>About Page</h1>
+
+    <p>The list of my favorite books:</p>
+    {% for book in myfavbooks%}
+        <p>{{book.title}}   {{book.description}}   {{book.uploaded_by.first_name}}  {{book.uploaded_by.last_name}}</p>
+    {%endfor%}
+{% endblock content %}
+

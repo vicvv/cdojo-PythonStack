@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'banda/css/style.css' %}">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <span class="navbar-brand mb-0 h1">Welcome to book's view!</span>
+    </nav>
+    <div class="row">
+          <p>Book Title :{{book.title}}</p>
+          <p>Book ID: {{book.id}}</p>
+          <p>Description: {{book.description}}</p>
+          <ul>
+            {% for author in book_authors %}
+                <li>{{author.first_name}} {{author.last_name}}</li>
+            {% endfor %}
+        </ul>
+        {% if messages %}
+            {% for message in messages %}
+                <p class="{{message.tags}}">{{message}}</p>
+            {% endfor %}
+        {% endif %}
+        <form action="/banda/add_author/{{book.id}}" method="post">
+            {% csrf_token %}
+            <select name="author" id="add_author">
+                {% for author in all_authors %}
+                    <option value="{{author.id}}">{{author.first_name}} {{author.last_name}}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Add Author">
+        </form>
+        <a href="{% url 'index'  %}">Home</a>
+    </div>
+</body>
+</html>

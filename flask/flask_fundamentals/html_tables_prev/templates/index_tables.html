@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tables</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/tables_style.css') }}">
+    <!-- linking a javascript file -->
+    <!-- <script type="text/javascript" src="{{ url_for('static', filename='js/tables_style.js') }}"></script> -->
+    <!-- linking an image -->
+    <!-- <img src="{{ url_for('static', filename='img/my_img.png') }}"> -->
+</head>
+<body>
+        <h1>Users Table</h1>
+        <table>
+            <tr><td>First Name</td><td>Last Name</td><td>Full Name</td></tr>
+            {% for user in users %}
+            <tr><td>{{ user['first_name'] }}</td> <td>{{ user['last_name'] }}</td><td>{{ user['first_name'] }} {{ user['last_name'] }}</td></tr>
+            {% endfor %} 
+        </table>
+        <!-- {% for student in students %}
+            <p>{{ student['name'] }} - {{ student['age'] }}</p>
+        {% endfor %} -->
+</body>
+</html>

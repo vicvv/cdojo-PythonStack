@@ -1,0 +1,106 @@
+{% extends "wall_app/base.html" %}
+{% block content %}
+
+<p>Welcome {{request.session.first_name}} {{request.session.id}}</p>
+{% for post in posts %}
+
+{%if request.session.id == post.created_by.id%}
+  <p></p>
+    <article class="media content-section">
+      <div class="media-body">
+        <div class="article-metadata">
+          <a class="mr-2" href="# ">MESSAGE# {{post.id}} created by {{ post.created_by.first_name}} {{post.created_by.last_name}} </a>
+          <small class="text-muted">{{ post.created_at | date:"F d, Y" }}</small>
+        </div>
+        <p class="article-content">{{ post.messagetext }}</p>
+      </div>
+      <a href={%url 'edit' post.id%} >Edit message</a> |<a href={%url 'delete' post.id%} >Delete message</a>
+    </article>
+    
+  {%else%}
+  <p></p>
+    <article class="media content-section">
+      <div class="media-body">
+        <div class="article-metadata">
+          <a class="mr-2" href="# ">MESSAGE# {{post.id}} created by {{ post.created_by.first_name}} {{post.created_by.last_name}} </a>
+          <small class="text-muted">{{ post.created_at | date:"F d, Y" }}</small>
+        </div>
+        <p class="article-content">{{ post.messagetext }}</p>
+      </div>
+    </article>
+  {%endif%}
+
+  {%for comment in comments%}
+    {%if comment.tomessage_id == post.id %} 
+    {%if request.session.id == comment.creator.id%}
+ 
+  <article class="media content-section">
+      <div class="media-body">
+        <div class="article-metadata">
+          <a class="mr-2" href="# ">COMMENT to message #{{post.id}} added by {{ comment.creator.first_name}} {{comment.creator.last_name}} </a>
+          <small class="text-muted">{{ post.created_at | date:"F d, Y" }}</small>
+        </div>
+        <p class="article-content">{{ comment.commenttext }}</p>
+      </div>
+      <a href=''>Edit Comment</a>|<a href="" class="">Delete Comment</a>
+    </article>
+{%else%}
+
+<article class="media content-section">
+    <div class="media-body">
+      <div class="article-metadata">
+        <a class="mr-2" href="# ">COMMENT to message #{{post.id}} added by {{ comment.creator.first_name}} {{comment.creator.last_name}} </a>
+        <small class="text-muted">{{ post.created_at | date:"F d, Y" }}</small>
+      </div>
+      <p class="article-content">{{ comment.commenttext }}</p>
+    </div>
+  </article>
+    {%endif%}
+
+  {%endif%}
+  {%endfor%}
+  <hr>
+
+<div class="col-sm-15">
+ 
+    <div class="signup-form">
+        <form action="home/newcomentform" method='POST'>
+        {% csrf_token %}
+          <div class="form-row align-items-center">
+            <div class="col-sm-10 my-1">
+              <label class="sr-only" for="inlineFormInputName">Name</label>
+              <textarea class="form-control" rows="3" id="inlineFormInputName" name="commenttext"></textarea>
+            </div>
+            <input type="hidden" name="postid" value={{post.id}}>
+            <div class="col-auto my-1">
+              <button type="submit" class="btn btn-outline-info">Coment</button>
+            </div>
+          </div>
+        </form>
+      <div> 
+</div>
+
+{% endfor %}
+
+{% if is_paginated %}
+
+{% if page_obj.has_previous %}
+<a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+<a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+{% endif %}
+
+{% for num in page_obj.paginator.page_range %}
+{% if page_obj.number == num %}
+<a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
+{% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+<a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
+{% endif %}
+{% endfor %}
+
+{% if page_obj.has_next %}
+<a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+<a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+{% endif %}
+
+{% endif %}
+{% endblock content %}

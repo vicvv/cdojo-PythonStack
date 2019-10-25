@@ -1,0 +1,698 @@
+$ script practice_pip_and_virtual_env.txt
+Script started, output file is practice_pip_and_virtual_env.txt
+$ pwd
+/Users/vicky/Desktop/DOJO_all/python_stack/my_environments
+$ mkdir my_first_virtenv
+$ cd my_first_virtenv/
+$ virtualenv -p python py3Env 
+Already using interpreter /Users/vicky/anaconda3/bin/python
+Using base prefix '/Users/vicky/anaconda3'
+New python executable in /Users/vicky/Desktop/DOJO_all/python_stack/my_environments/my_first_virtenv/py3Env/bin/python
+Installing setuptools, pip, wheel...
+done.
+$ ls
+py3Env
+$ pip --version
+pip 19.1.1 from /Users/vicky/anaconda3/lib/python3.6/site-packages/pip (python 3.6)
+$ pip list
+Package                            Version    
+---------------------------------- -----------
+absl-py                            0.6.1      
+alabaster                          0.7.10     
+amqp                               2.4.2      
+anaconda-client                    1.6.14     
+anaconda-navigator                 1.9.7      
+anaconda-project                   0.8.2      
+appdirs                            1.4.3      
+appnope                            0.1.0      
+appscript                          1.0.1      
+asn1crypto                         0.24.0     
+astor                              0.7.1      
+astroid                            1.6.3      
+astropy                            3.0.2      
+attrs                              18.1.0     
+awscli                             1.16.135   
+Babel                              2.5.3      
+backcall                           0.1.0      
+backports.shutil-get-terminal-size 1.0.0      
+bcrypt                             3.1.6      
+beautifulsoup4                     4.6.3      
+bitarray                           0.8.1      
+bkcharts                           0.2        
+blaze                              0.11.3     
+bleach                             2.1.3      
+bokeh                              0.12.16    
+boto                               2.48.0     
+boto3                              1.9.96     
+botocore                           1.12.125   
+Bottleneck                         1.2.1      
+bs4                                0.0.1      
+certifi                            2019.6.16  
+cffi                               1.11.5     
+chardet                            3.0.4      
+click                              6.7        
+cloudpickle                        0.5.3      
+clyent                             1.2.2      
+colorama                           0.3.9      
+conda                              4.7.10     
+conda-package-handling             1.3.11     
+conda-verify                       2.0.0      
+confusable-homoglyphs              3.2.0      
+contextlib2                        0.5.5      
+cryptography                       2.7        
+cryptography-vectors               2.3.1      
+cycler                             0.10.0     
+Cython                             0.28.2     
+cytoolz                            0.9.0.1    
+dask                               0.17.5     
+datashape                          0.5.4      
+decorator                          4.3.0      
+distributed                        1.21.8     
+Django                             2.1.3      
+django-bootstrap3                  11.0.0     
+django-jquery                      3.1.0      
+django-pandas                      0.5.1      
+django-registration                3.0        
+dnspython                          1.16.0     
+docutils                           0.14       
+entrypoints                        0.2.3      
+et-xmlfile                         1.0.1      
+eventlet                           0.25.0     
+Faker                              1.0.0      
+fastcache                          1.0.2      
+filelock                           3.0.4      
+Flask                              1.0.2      
+Flask-Cors                         3.0.4      
+gast                               0.2.1.post0
+gevent                             1.3.0      
+glob2                              0.6        
+gmpy2                              2.0.8      
+graphviz                           0.10.1     
+greenlet                           0.4.15     
+grpcio                             1.16.1     
+h5py                               2.8.0rc1   
+heapdict                           1.0.0      
+helper                             2.4.2      
+html5lib                           1.0.1      
+idna                               2.8        
+imageio                            2.3.0      
+imagesize                          1.0.0      
+importlib-metadata                 0.15       
+ipykernel                          4.8.2      
+ipython                            6.4.0      
+ipython-genutils                   0.2.0      
+ipywidgets                         7.2.1      
+isort                              4.3.4      
+itsdangerous                       0.24       
+jdcal                              1.4        
+jedi                               0.12.0     
+Jinja2                             2.10       
+jmespath                           0.9.3      
+jsonschema                         2.6.0      
+jupyter                            1.0.0      
+jupyter-client                     5.2.3      
+jupyter-console                    5.2.0      
+jupyter-core                       4.4.0      
+jupyterlab                         0.32.1     
+jupyterlab-launcher                0.10.5     
+kiwisolver                         1.0.1      
+kombu                              4.5.0      
+lazy-object-proxy                  1.3.1      
+libarchive-c                       2.8        
+llvmlite                           0.23.1     
+locket                             0.2.0      
+lxml                               4.2.1      
+Markdown                           2.6.11     
+MarkupSafe                         1.0        
+matplotlib                         2.2.2      
+mccabe                             0.6.1      
+mistune                            0.8.3      
+mkl-fft                            1.0.0      
+mkl-random                         1.0.1      
+mock                               3.0.5      
+monotonic                          1.5        
+more-itertools                     4.1.0      
+mpmath                             1.0.0      
+msgpack-python                     0.5.6      
+multipledispatch                   0.5.0      
+nameko                             2.12.0     
+navigator-updater                  0.2.1      
+nbconvert                          5.3.1      
+nbformat                           4.4.0      
+networkx                           2.1        
+nltk                               3.3        
+nose                               1.3.7      
+notebook                           5.5.0      
+numba                              0.38.0     
+numexpr                            2.6.5      
+numpy                              1.14.3     
+numpydoc                           0.8.0      
+odo                                0.5.1      
+olefile                            0.45.1     
+opencv-python                      4.0.0.21   
+openpyxl                           2.5.3      
+packaging                          17.1       
+pandas                             0.23.0     
+pandocfilters                      1.4.2      
+paramiko                           2.4.2      
+parso                              0.2.0      
+partd                              0.3.8      
+path.py                            12.0.1     
+pathlib2                           2.3.2      
+patsy                              0.5.0      
+pbr                                5.1.1      
+pep8                               1.7.1      
+perfplot                           0.5.0      
+pexpect                            4.5.0      
+pickleshare                        0.7.4      
+Pillow                             5.1.0      
+pip                                19.1.1     
+pipdate                            0.3.2      
+pkginfo                            1.4.2      
+pluggy                             0.6.0      
+ply                                3.11       
+postgres-kernel                    0.1        
+prompt-toolkit                     1.0.15     
+protobuf                           3.6.1      
+psutil                             5.4.5      
+psycopg2                           2.7.6.1    
+ptyprocess                         0.5.2      
+py                                 1.5.3      
+pyasn1                             0.4.5      
+pycodestyle                        2.4.0      
+pycosat                            0.6.3      
+pycparser                          2.18       
+pycrypto                           2.6.1      
+pycurl                             7.43.0.3   
+pydotplus                          2.0.2      
+pyflakes                           1.6.0      
+Pygments                           2.2.0      
+pylint                             1.8.4      
+PyNaCl                             1.3.0      
+pyodbc                             4.0.23     
+pyOpenSSL                          18.0.0     
+pyparsing                          2.2.0      
+PySocks                            1.6.8      
+pytest                             3.5.1      
+pytest-arraydiff                   0.2        
+pytest-astropy                     0.3.0      
+pytest-doctestplus                 0.1.3      
+pytest-openfiles                   0.3.0      
+pytest-remotedata                  0.2.1      
+python-dateutil                    2.7.3      
+pytz                               2018.4     
+PyWavelets                         0.5.2      
+PyYAML                             5.1        
+pyzmq                              17.0.0     
+QtAwesome                          0.4.4      
+qtconsole                          4.3.1      
+QtPy                               1.4.1      
+redis                              2.10.6     
+requests                           2.22.0     
+rope                               0.10.7     
+rsa                                3.4.2      
+ruamel-yaml                        0.15.35    
+s3transfer                         0.2.0      
+scikit-image                       0.13.1     
+scikit-learn                       0.19.1     
+scipy                              1.1.0      
+scp                                0.13.2     
+seaborn                            0.8.1      
+Send2Trash                         1.5.0      
+setuptools                         39.1.0     
+simplegeneric                      0.8.1      
+singledispatch                     3.4.0.3    
+six                                1.12.0     
+snowballstemmer                    1.2.1      
+sortedcollections                  0.6.1      
+sortedcontainers                   1.5.10     
+Sphinx                             1.7.4      
+sphinxcontrib-websupport           1.0.1      
+spyder                             3.2.8      
+SQLAlchemy                         1.2.7      
+statsmodels                        0.9.0      
+stevedore                          1.30.0     
+sympy                              1.1.1      
+tables                             3.4.3      
+tabulate                           0.7.5      
+tblib                              1.3.2      
+tensorboard                        1.10.0     
+termcolor                          1.1.0      
+terminado                          0.8.1      
+testpath                           0.3.1      
+text-unidecode                     1.2        
+toolz                              0.9.0      
+tornado                            5.0.2      
+tqdm                               4.32.1     
+traitlets                          4.3.2      
+typing                             3.6.4      
+unicodecsv                         0.14.1     
+urllib3                            1.25.3     
+vine                               1.3.0      
+virtualenv                         16.1.0     
+virtualenv-clone                   0.4.0      
+virtualenvwrapper                  4.8.2      
+wcwidth                            0.1.7      
+webencodings                       0.5.1      
+Werkzeug                           0.15.4     
+wheel                              0.31.1     
+widgetsnbextension                 3.2.1      
+wrapt                              1.11.1     
+xlrd                               1.1.0      
+XlsxWriter                         1.0.4      
+xlwings                            0.11.8     
+xlwt                               1.2.0      
+zict                               0.1.3      
+zipp                               0.5.1      
+WARNING: You are using pip version 19.1.1, however version 19.2.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+$ source py3Env/bin/activate 
+(py3Env) $ pip list
+Package    Version
+---------- -------
+pip        19.2.1 
+setuptools 41.0.1 
+wheel      0.33.4 
+(py3Env) $ pip install django ; python -m django —version
+Collecting django
+  Downloading https://files.pythonhosted.org/packages/39/b0/2138c31bf13e17afc32277239da53e9dfcce27bac8cb68cf1c0123f1fdf5/Django-2.2.3-py3-none-any.whl (7.5MB)
+     |████████████████████████████████| 7.5MB 1.0MB/s 
+Collecting sqlparse (from django)
+  Downloading https://files.pythonhosted.org/packages/ef/53/900f7d2a54557c6a37886585a91336520e5539e3ae2423ff1102daf4f3a7/sqlparse-0.3.0-py2.py3-none-any.whl
+Collecting pytz (from django)
+  Downloading https://files.pythonhosted.org/packages/3d/73/fe30c2daaaa0713420d0382b16fbb761409f532c56bdcc514bf7b6262bb6/pytz-2019.1-py2.py3-none-any.whl (510kB)
+     |████████████████████████████████| 512kB 3.7MB/s 
+Installing collected packages: sqlparse, pytz, django
+Successfully installed django-2.2.3 pytz-2019.1 sqlparse-0.3.0
+No Django settings specified.
+Unknown command: '—version'
+Type 'python -m django help' for usage.
+(py3Env) $ django --version
+bash: django: command not found
+(py3Env) $ pip list
+Package    Version
+---------- -------
+Django     2.2.3  
+pip        19.2.1 
+pytz       2019.1 
+setuptools 41.0.1 
+sqlparse   0.3.0  
+wheel      0.33.4 
+(py3Env) $ deactivate
+$ pip list
+Package                            Version    
+---------------------------------- -----------
+absl-py                            0.6.1      
+alabaster                          0.7.10     
+amqp                               2.4.2      
+anaconda-client                    1.6.14     
+anaconda-navigator                 1.9.7      
+anaconda-project                   0.8.2      
+appdirs                            1.4.3      
+appnope                            0.1.0      
+appscript                          1.0.1      
+asn1crypto                         0.24.0     
+astor                              0.7.1      
+astroid                            1.6.3      
+astropy                            3.0.2      
+attrs                              18.1.0     
+awscli                             1.16.135   
+Babel                              2.5.3      
+backcall                           0.1.0      
+backports.shutil-get-terminal-size 1.0.0      
+bcrypt                             3.1.6      
+beautifulsoup4                     4.6.3      
+bitarray                           0.8.1      
+bkcharts                           0.2        
+blaze                              0.11.3     
+bleach                             2.1.3      
+bokeh                              0.12.16    
+boto                               2.48.0     
+boto3                              1.9.96     
+botocore                           1.12.125   
+Bottleneck                         1.2.1      
+bs4                                0.0.1      
+certifi                            2019.6.16  
+cffi                               1.11.5     
+chardet                            3.0.4      
+click                              6.7        
+cloudpickle                        0.5.3      
+clyent                             1.2.2      
+colorama                           0.3.9      
+conda                              4.7.10     
+conda-package-handling             1.3.11     
+conda-verify                       2.0.0      
+confusable-homoglyphs              3.2.0      
+contextlib2                        0.5.5      
+cryptography                       2.7        
+cryptography-vectors               2.3.1      
+cycler                             0.10.0     
+Cython                             0.28.2     
+cytoolz                            0.9.0.1    
+dask                               0.17.5     
+datashape                          0.5.4      
+decorator                          4.3.0      
+distributed                        1.21.8     
+Django                             2.1.3      
+django-bootstrap3                  11.0.0     
+django-jquery                      3.1.0      
+django-pandas                      0.5.1      
+django-registration                3.0        
+dnspython                          1.16.0     
+docutils                           0.14       
+entrypoints                        0.2.3      
+et-xmlfile                         1.0.1      
+eventlet                           0.25.0     
+Faker                              1.0.0      
+fastcache                          1.0.2      
+filelock                           3.0.4      
+Flask                              1.0.2      
+Flask-Cors                         3.0.4      
+gast                               0.2.1.post0
+gevent                             1.3.0      
+glob2                              0.6        
+gmpy2                              2.0.8      
+graphviz                           0.10.1     
+greenlet                           0.4.15     
+grpcio                             1.16.1     
+h5py                               2.8.0rc1   
+heapdict                           1.0.0      
+helper                             2.4.2      
+html5lib                           1.0.1      
+idna                               2.8        
+imageio                            2.3.0      
+imagesize                          1.0.0      
+importlib-metadata                 0.15       
+ipykernel                          4.8.2      
+ipython                            6.4.0      
+ipython-genutils                   0.2.0      
+ipywidgets                         7.2.1      
+isort                              4.3.4      
+itsdangerous                       0.24       
+jdcal                              1.4        
+jedi                               0.12.0     
+Jinja2                             2.10       
+jmespath                           0.9.3      
+jsonschema                         2.6.0      
+jupyter                            1.0.0      
+jupyter-client                     5.2.3      
+jupyter-console                    5.2.0      
+jupyter-core                       4.4.0      
+jupyterlab                         0.32.1     
+jupyterlab-launcher                0.10.5     
+kiwisolver                         1.0.1      
+kombu                              4.5.0      
+lazy-object-proxy                  1.3.1      
+libarchive-c                       2.8        
+llvmlite                           0.23.1     
+locket                             0.2.0      
+lxml                               4.2.1      
+Markdown                           2.6.11     
+MarkupSafe                         1.0        
+matplotlib                         2.2.2      
+mccabe                             0.6.1      
+mistune                            0.8.3      
+mkl-fft                            1.0.0      
+mkl-random                         1.0.1      
+mock                               3.0.5      
+monotonic                          1.5        
+more-itertools                     4.1.0      
+mpmath                             1.0.0      
+msgpack-python                     0.5.6      
+multipledispatch                   0.5.0      
+nameko                             2.12.0     
+navigator-updater                  0.2.1      
+nbconvert                          5.3.1      
+nbformat                           4.4.0      
+networkx                           2.1        
+nltk                               3.3        
+nose                               1.3.7      
+notebook                           5.5.0      
+numba                              0.38.0     
+numexpr                            2.6.5      
+numpy                              1.14.3     
+numpydoc                           0.8.0      
+odo                                0.5.1      
+olefile                            0.45.1     
+opencv-python                      4.0.0.21   
+openpyxl                           2.5.3      
+packaging                          17.1       
+pandas                             0.23.0     
+pandocfilters                      1.4.2      
+paramiko                           2.4.2      
+parso                              0.2.0      
+partd                              0.3.8      
+path.py                            12.0.1     
+pathlib2                           2.3.2      
+patsy                              0.5.0      
+pbr                                5.1.1      
+pep8                               1.7.1      
+perfplot                           0.5.0      
+pexpect                            4.5.0      
+pickleshare                        0.7.4      
+Pillow                             5.1.0      
+pip                                19.1.1     
+pipdate                            0.3.2      
+pkginfo                            1.4.2      
+pluggy                             0.6.0      
+ply                                3.11       
+postgres-kernel                    0.1        
+prompt-toolkit                     1.0.15     
+protobuf                           3.6.1      
+psutil                             5.4.5      
+psycopg2                           2.7.6.1    
+ptyprocess                         0.5.2      
+py                                 1.5.3      
+pyasn1                             0.4.5      
+pycodestyle                        2.4.0      
+pycosat                            0.6.3      
+pycparser                          2.18       
+pycrypto                           2.6.1      
+pycurl                             7.43.0.3   
+pydotplus                          2.0.2      
+pyflakes                           1.6.0      
+Pygments                           2.2.0      
+pylint                             1.8.4      
+PyNaCl                             1.3.0      
+pyodbc                             4.0.23     
+pyOpenSSL                          18.0.0     
+pyparsing                          2.2.0      
+PySocks                            1.6.8      
+pytest                             3.5.1      
+pytest-arraydiff                   0.2        
+pytest-astropy                     0.3.0      
+pytest-doctestplus                 0.1.3      
+pytest-openfiles                   0.3.0      
+pytest-remotedata                  0.2.1      
+python-dateutil                    2.7.3      
+pytz                               2018.4     
+PyWavelets                         0.5.2      
+PyYAML                             5.1        
+pyzmq                              17.0.0     
+QtAwesome                          0.4.4      
+qtconsole                          4.3.1      
+QtPy                               1.4.1      
+redis                              2.10.6     
+requests                           2.22.0     
+rope                               0.10.7     
+rsa                                3.4.2      
+ruamel-yaml                        0.15.35    
+s3transfer                         0.2.0      
+scikit-image                       0.13.1     
+scikit-learn                       0.19.1     
+scipy                              1.1.0      
+scp                                0.13.2     
+seaborn                            0.8.1      
+Send2Trash                         1.5.0      
+setuptools                         39.1.0     
+simplegeneric                      0.8.1      
+singledispatch                     3.4.0.3    
+six                                1.12.0     
+snowballstemmer                    1.2.1      
+sortedcollections                  0.6.1      
+sortedcontainers                   1.5.10     
+Sphinx                             1.7.4      
+sphinxcontrib-websupport           1.0.1      
+spyder                             3.2.8      
+SQLAlchemy                         1.2.7      
+statsmodels                        0.9.0      
+stevedore                          1.30.0     
+sympy                              1.1.1      
+tables                             3.4.3      
+tabulate                           0.7.5      
+tblib                              1.3.2      
+tensorboard                        1.10.0     
+termcolor                          1.1.0      
+terminado                          0.8.1      
+testpath                           0.3.1      
+text-unidecode                     1.2        
+toolz                              0.9.0      
+tornado                            5.0.2      
+tqdm                               4.32.1     
+traitlets                          4.3.2      
+typing                             3.6.4      
+unicodecsv                         0.14.1     
+urllib3                            1.25.3     
+vine                               1.3.0      
+virtualenv                         16.1.0     
+virtualenv-clone                   0.4.0      
+virtualenvwrapper                  4.8.2      
+wcwidth                            0.1.7      
+webencodings                       0.5.1      
+Werkzeug                           0.15.4     
+wheel                              0.31.1     
+widgetsnbextension                 3.2.1      
+wrapt                              1.11.1     
+xlrd                               1.1.0      
+XlsxWriter                         1.0.4      
+xlwings                            0.11.8     
+xlwt                               1.2.0      
+zict                               0.1.3      
+zipp                               0.5.1      
+WARNING: You are using pip version 19.1.1, however version 19.2.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+$ source py3Env/bin/activate 
+(py3Env) $ pip install django
+Requirement already satisfied: django in ./py3Env/lib/python3.6/site-packages (2.2.3)
+Requirement already satisfied: pytz in ./py3Env/lib/python3.6/site-packages (from django) (2019.1)
+Requirement already satisfied: sqlparse in ./py3Env/lib/python3.6/site-packages (from django) (0.3.0)
+(py3Env) $ pip freeze
+Django==2.2.3
+pytz==2019.1
+sqlparse==0.3.0
+(py3Env) $ pip list
+Package    Version
+---------- -------
+Django     2.2.3  
+pip        19.2.1 
+pytz       2019.1 
+setuptools 41.0.1 
+sqlparse   0.3.0  
+wheel      0.33.4 
+(py3Env) $ cd /usr/
+bin/        lib/        libexec/    local/      sbin/       share/      standalone/ 
+(py3Env) $ cd 
+(py3Env) $ pwd
+/Users/vicky
+(py3Env) $ cd Desktop/
+(py3Env) $ pip freeze > requirements.txt
+(py3Env) $ more requirements.txt 
+Django==2.2.3
+pytz==2019.1
+sqlparse==0.3.0
+(py3Env) $ pip uninstall Django
+Uninstalling Django-2.2.3:
+  Would remove:
+    /Users/vicky/Desktop/DOJO_all/python_stack/my_environments/my_first_virtenv/py3Env/bin/django-admin
+    /Users/vicky/Desktop/DOJO_all/python_stack/my_environments/my_first_virtenv/py3Env/bin/django-admin.py
+    /Users/vicky/Desktop/DOJO_all/python_stack/my_environments/my_first_virtenv/py3Env/lib/python3.6/site-packages/Django-2.2.3.dist-info/*
+    /Users/vicky/Desktop/DOJO_all/python_stack/my_environments/my_first_virtenv/py3Env/lib/python3.6/site-packages/django/*
+Proceed (y/n)? y
+  Successfully uninstalled Django-2.2.3
+(py3Env) $ pip show Django
+(py3Env) $ pip search Flask
+Flask-SimpleMDE (0.3.0)     - Flask-SimpleMDE - a Flask extension for SimpleMDE
+Flask-Pure (0.5)            - Flask-Pure - a Flask extension for Pure.css
+Flask-OrientDB (0.1)        - A Flask extension for using OrientDB with Flask
+Flask-PubSub (0.1.0)        - Flask-PubSub
+Flask-Waitress (0.0.1)      - Flask Waitress
+flask-zs (0.0.17)           - A helpers for Flask.
+sockjs-flask (0.3)          - SockJs for Flask
+Flask-Stripe (0.1.0)        - Flask-Stripe
+Flask-Quik (0.1.1)          - Quik for Flask
+Flask-BDEA (0.1.0)          - Flask-BDEA
+Flask-Helper (0.19)         - Flask Helper
+Flask-ElasticUtils (0.1.7)  - ElasticUtils for Flask
+flask-helloworld (1.0.0)    - Flask Helloworld
+Flask-GripControl (0.0.1)   - Flask GripControl
+Flask-SRI (0.1.0)           - Flask-SRI
+flask-ws (0.0.1.0)          - Websocket for flask.
+Flask-AutoIndex (0.6.4)     - The mod_autoindex for Flask
+Flask-Clearbit (0.1.0)      - Flask-Clearbit
+Flask-FontAwesome (0.1.2)   - FontAwesome for Flask
+flask-ypaginate (0.1.3)     - Pagination for Flask
+Flask-OAuthlib (0.9.5)      - OAuthlib for Flask
+Flask-Mustache (0.4.1)      - Mustache for Flask
+Fifty-Flask (1.4.0)         - Flask enhancements.
+Flask-Chargebee (0.0.1)     - Flask-Chargebee
+Flask-Keen (0.1.0)          - Flask-Keen
+Flask-NextCaller (0.1.0)    - Flask-NextCaller
+Flask-Gears (0.2)           - Gears for Flask
+Flask-Shopify (0.2)         - Shopify Flask
+Flask-Ext (0.1)             - Extensions of Flask
+Flask-TaskTiger (0.0.1)     - Flask TaskTiger
+Flask-Weixin (0.5.0)        - Weixin for Flask.
+Flask-Intercom (0.1.0)      - Flask-Intercom
+Flask-SPF (0.0.0)           - Flask-SPF
+flask-toolbox (0.0.2)       - A flask toolbox.
+Flask-Turbolinks (0.2.0)    - Turbolinks for Flask.
+Flask-Watson (0.1.0)        - Flask-Watson
+Flask-FileRev (0.1.0)       - Flask-FileRev
+airbrake-flask (1.0.7)      - airbrake-flask - Airbrake client for Python Flask
+Flask-GeoIP (0.1.3)         - Flask-GeoIP -------------  Simple Flask extension for pygeoip.
+flask-myapi (0.1)           - Flask-MyAPI - RESTful support library for Flask
+Flask-Diced (0.3)           - Flask-Diced - CRUD views generator for Flask
+Flask-RESTive (0.0.3)       - Flask RESTive is a REST API Flask extension based on Flask-RESTful & Marshmallow.
+Flask-LoginManager (1.1.6)  - Flask-Loginmanager supports multiple roles and permissions for Flask, inspired by Flask-Login
+Flask-FlatPagesCut (0.5.1)  - Flask-FlatPagesCut is fork Flask-FlatPages (Provides flat static pages to a Flask application)
+flask-lesscss (0.9.1)       - A small Flask extension that adds LessCSS support to Flask.
+flask-shell (0.1.3)         - Flask extension to improve shell command for the Flask CLI.
+flask-stylus2css (0.1)      - A small Flask extension that adds Stylus support to Flask.
+flask-coffee2js (0.1.2)     - A small Flask extension that adds CoffeScript support to Flask.
+Flask-Collect (1.3.2)       - Flask-Collect -- Collect static files in Flask application
+flask-filters (0.3)         - The Flask Filter to use with flask-restful and Relational DB
+Flask-Shelve (0.1.1)        - Shelve support for Flask
+Flask-CKEditor (0.4.3)      - CKEditor integration for Flask.
+Flask-Triangle (0.5.4)      - Integration of AngularJS and Flask.
+Flask-Zero (0.9.6)          - Qiniu Storage for Flask
+Flask-CuttlePool (0.2.0)    - A Flask extension for CuttlePool
+Flask-Funnel (0.1.10)       - Asset management for Flask.
+Flask-Breve (0.2)           - Breve templating with Flask
+Flask-mongobit (0.1.2)      - MongoBit support in Flask
+flask-logsocketio (0.1.4)   - Flask LogSocketIo module
+Flask-SaeStorage (0.9.0)    - SAE Storage for Flask
+Flask-Passlib (0.1)         - Flask extension for passlib
+flask-iMail (0.1)           - Mailgun integration for Flask.
+flask-snow (0.2.8)          - Pysnow extension for Flask
+Flask-Autodoc (0.1.2)       - Documentation generator for flask
+Flask-wechatpy (0.1.3)      - wechatpy for flask extension
+Flask-Vises (2.1.4)         - A Flask scaffold library
+Flask-PyFCM (0.1.1)         - Flask extension for PyFCM
+Flask-sshtunnel (0.1b2)     - sshtunnel extension for flask
+Flask-Failsafe (0.2)        - A failsafe for the Flask reloader
+Flask-Testing (0.7.1)       - Unit testing for Flask
+nailpack-flask (0.1.0)      - Flask support for nails
+flask-authentic (0.0.11)    - Flask Authentic Extension
+Flask-Sixpack (0.0.1)       - Flask wrapper for Sixpack
+flask-now (0.1.5)           - Flask App Generator
+Flask-Latch (0.1.0)         - Latch extension for Flask
+Flask-Storm (0.2.0)         - Storm integration for Flask.
+Flask-MySQLdb (0.2.0)       - MySQLdb extension for Flask
+Flask-Airbrake (0.0.3)      - Flask extension for Airbrake
+castle-flask (0.0.1)        - A Flask client for Castle.io
+Flask-OpenID (1.2.5)        - OpenID support for Flask
+Flask-Edits (0.8)           - Editable Content in Flask
+Flask-Navigation (0.2.0)    - The navigation of Flask application.
+flask-serial (1.1.0)        - Flask extension for the Serial
+flask-discoverer (0.0.5)    - Flask API autodiscovery
+Flask-Slack (0.1.5)         - Slack extension for Flask.
+Flask-Triangle3 (0.5.3)     - Integration of AngularJS and Flask.
+Flask-ZMQ (0.1.2)           - Flask extension for ZMQ
+Flask-Enterprise (1.0)      - Enterprise capabilities for Flask
+Flask-CAS (1.0.1)           - Flask extension for CAS
+Flask-SAML (0.4.3)          - Flask SAML integration
+Flask-Flarf (0.0.5)         - Flask request filtering
+flask-tat (0.0.10)          - Flask TAT client
+Flask-Avatar (0.1.3)        - To generate avatar for flask
+Flask-Config (0.2.1)        - Flask configuration class
+flask-blitzdb (0.1)         - Flask extension for blitzdb
+Flask-RBAC (0.3.0)          - RBAC support for Flask
+flask-handlers (0.0.1)      - Handlers for Flask applications
+Flask-Postmark (0.2.0)      - Postmark Flask extension
+Flask-Htmldoom (0.1.2)      - htmldoom integration for Flask
+Flask-PRBAC (0.1.3)         - RBAC support for Flask
+(py3Env) $ deactivate
+$ exit
+exit
+
+Script done, output file is practice_pip_and_virtual_env.txt

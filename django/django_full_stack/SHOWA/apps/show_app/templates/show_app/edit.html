@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'show_app/css/style.css' %}">
+    <title>Document</title>
+</head>
+
+<nav class="navbar navbar-light bg-light">
+        <span class="navbar-brand mb-0 h1">Edit Show </span>
+    </nav>
+
+    {% if messages %}
+            {% for message in messages %}
+                <p class="{{message.tags}}">{{message}}</p>
+            {% endfor %}
+        {% endif %}
+
+    <div class="row">
+        <div class="col-sm-6">
+
+        <form action="/shows/{{show.id}}/edit/process" method ="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input type="text" class="form-control" name="title" value="{{show.title}}">
+                </div>
+                <div class="form-group">
+                        <input type="text" class="form-control" name="network" value="{{show.network}}">
+                </div>
+
+                <div class="form-group">
+                    <textarea class="form-control" id="exampleFormControlTextarea4" rows="3" name="descr">{{show.descr}}</textarea>
+                </div>
+
+                <div class="form-group">
+                        <input type="text" class="form-control" name="rday" value = "{{show.rday}}">
+                </div>
+                        <input class="hidden" value = "{{show.id}}"></input>
+                <div class='form-group'>
+                    <button class="btn btn-primary">Edit Show</button>
+                </div>
+        </form>
+
+
+            <a href="{% url 'index'  %}">Add Link</a>
+        </div>
+    </div>
+</body>
+</html>

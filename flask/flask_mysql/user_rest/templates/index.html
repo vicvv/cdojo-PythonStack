@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>User Rest attempt</title>
+</head>
+
+<body>
+
+    <div class="jumbotron">
+        <h3 class="display-6">USERS!!</h3>
+        <a class="nav-link" href="/users/new">Add New User</a>
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th>#</th>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>created At</th>
+                    <th>Updated</th>
+                    <th>CRUD</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {%for user in myusers%}
+                <tr>
+                    <td>{{user['id']}}</td>
+                    <td>{{user['name']}}</td>
+                    <td>{{user['email']}}</td>
+                    <td>{{user['created_at']}}</td>
+                    <td>{{user['updated_at']}}</td>
+                    <td>
+                        <a href="/users/{{user['id']}}">Show</a>|<a href="/users/{{user['id']}}/edit">Edit</a>|
+                        <a href="/users/{{user['id']}}/destroy">Delete</a> 
+                
+                    </td>
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

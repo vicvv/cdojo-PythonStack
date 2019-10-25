@@ -1,0 +1,14 @@
+{% extends "login_app/base.html" %}
+{% block content %}
+<nav class="navbar navbar-light bg-light justify-content-between">
+        <a href = "{% url 'logout'  %} "class="navbar-brand">logout</a>
+        <p></p>
+        <form class="form-inline" id="mr">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+</nav>
+
+<p>Success! Welcome {{request.session.first_name}}</p>
+<h5>Successfully loged in! </h5>
+{% endblock content %}
