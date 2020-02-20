@@ -1,5 +1,4 @@
 #!/bin/bash
-# A script to create a new Django project, by Michael K
 # example usage: 
 # sh newproject.sh django_intro/ my_first_project my_first_app
 
